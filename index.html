@@ -1,151 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iLikedit - Desenvolvedor</title>
-    <link rel="icon" href="IconeIL512.png" type="image/png">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --background-color: #f5f6fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            /* text-align: center; */ /* Removido */
-            /* padding: 2rem 0; */ /* Removido */
-            /* background-color: var(--primary-color); */ /* Removido */
-            /* color: white; */ /* Removido */
-            /* margin-bottom: 2rem; */ /* Removido */
-            /* padding-bottom: 1rem; */ /* Removido */
-            line-height: 0; /* Para remover espaço extra da imagem */
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        section {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .privacy-links, .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        a:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-        }
-
-        .language-tag {
-            font-size: 0.8rem;
-            color: var(--secondary-color);
-            margin-left: 0.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-        }
-
-        .header-banner {
-            width: 100%; /* Ocupa toda a largura */
-            height: auto; /* Mantém proporção */
-            display: block; /* Garante que ocupe a linha inteira */
-            /* margin-top: 1rem; */ /* Removido */
-            /* margin-left: auto; */ /* Removido */
-            /* margin-right: auto; */ /* Removido */
-        }
- 
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-
-            header {
-                padding: 1.5rem 0;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#131019">
+  <meta name="description" content="iLikedit cria experiências Android cuidadosas, acessíveis e intuitivas.">
+  <meta property="og:title" content="iLikedit — Aplicativos Android">
+  <meta property="og:description" content="Tecnologia feita com intenção.">
+  <meta property="og:image" content="https://ilikedit.github.io/LogoPlayStore.png">
+  <title>iLikedit — Aplicativos Android</title>
+  <link rel="icon" href="IconeIL512.png" type="image/png">
+  <style>
+    :root{color-scheme:dark;--bg:#131019;--card:#1d1827;--text:#f6f1fa;--muted:#c3b9cc;--gold:#e9b85f;--pale:#f7dca7;--line:rgba(247,220,167,.18)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(circle at 15% 0,rgba(143,112,197,.22),transparent 34rem),radial-gradient(circle at 90% 22%,rgba(233,184,95,.13),transparent 30rem),var(--bg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.shell{width:min(1100px,calc(100% - 32px));margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:1.3rem;font-weight:800}.brand i{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);border-radius:12px;color:var(--gold);font:normal 1.3rem Georgia;background:rgba(255,255,255,.05)}.brand b{color:var(--gold)}
+    .langs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px}.langs button{padding:7px 9px;border:1px solid transparent;border-radius:99px;color:var(--muted);background:none;cursor:pointer}.langs button:hover,.langs button[aria-pressed=true]{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.06)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px;min-height:610px;padding:68px 0 92px}.overline{margin:0 0 13px;color:var(--gold);font-size:.77rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1,h2{font-family:Georgia,serif;letter-spacing:-.035em}h1{max-width:760px;margin:0;font-size:clamp(2.8rem,7vw,5.6rem);line-height:.98}h1 em{color:var(--pale);font-style:normal}.lead{max-width:640px;margin:25px 0 0;color:var(--muted);font-size:clamp(1.05rem,2vw,1.24rem)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:33px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:750;transition:.2s}.button:hover{transform:translateY(-2px)}.primary{color:#231a0d;background:linear-gradient(135deg,var(--pale),var(--gold));border:0}.secondary{background:rgba(255,255,255,.05)}
+    .moon{position:relative;display:grid;place-items:center;min-height:370px;color:var(--pale);font:8rem/1 Georgia;text-shadow:0 0 50px rgba(233,184,95,.3)}.moon:before,.moon:after{content:"";position:absolute;border:1px solid var(--line);border-radius:50%;animation:spin 22s linear infinite}.moon:before{width:330px;height:330px}.moon:after{width:255px;height:255px;border-style:dashed;animation-direction:reverse}@keyframes spin{to{transform:rotate(360deg)}}
+    section.content{padding:85px 0}.heading{max-width:690px;margin-bottom:32px}h2{margin:0 0 10px;font-size:clamp(2rem,4vw,3.15rem);line-height:1.08}.heading>p:last-child,.card p,.panel p{margin:0;color:var(--muted)}
+    .card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:27px;padding:30px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:0 24px 70px rgba(0,0,0,.33)}.icon{width:112px;height:112px;border-radius:25px;box-shadow:0 15px 32px rgba(0,0,0,.35)}.card h3,.panel h3{margin:0 0 7px;font-size:1.45rem}.tag{display:inline-flex;margin-top:13px;padding:5px 10px;border-radius:99px;color:var(--pale);background:rgba(233,184,95,.1);font-size:.78rem}
+    .grid{display:grid;grid-template-columns:1.35fr .65fr;gap:22px}.panel{padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--card)}.policies{display:flex;flex-wrap:wrap;gap:8px;margin-top:19px}.policies a{padding:8px 12px;border:1px solid var(--line);border-radius:11px;color:var(--pale);text-decoration:none}.policies a:hover{background:rgba(255,255,255,.06)}.mail{display:inline-block;margin-top:17px;color:var(--pale);overflow-wrap:anywhere;text-underline-offset:4px}
+    footer{display:flex;justify-content:space-between;gap:18px;padding:33px 0 44px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}footer p{margin:0}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;min-height:0}.moon{order:-1;min-height:260px;font-size:6rem}.moon:before{width:245px;height:245px}.moon:after{width:190px;height:190px}.card{grid-template-columns:auto 1fr}.card .button{grid-column:1/-1}.grid{grid-template-columns:1fr}footer{flex-direction:column}}
+    @media(max-width:480px){header{align-items:flex-start;padding:17px 0}.langs{max-width:190px}.card{grid-template-columns:1fr;padding:23px}.icon{width:90px;height:90px}section.content{padding:65px 0}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
 </head>
 <body>
-    <header>
-        <a href="https://play.google.com/store/apps/dev?id=6779739041699610433" target="_blank">
-             <img src="LogoPlayStore.png" alt="iLikedit - Disponível no Google Play" class="header-banner">
-        </a>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>Políticas de Privacidade</h2>
-            <div class="privacy-links">
-                <a href="privacypolicy-pt.html">Política de Privacidade <span class="language-tag">[Português]</span></a>
-                <a href="privacypolicy-en.html">Privacy Policy <span class="language-tag">[English]</span></a>
-                <a href="privacypolicy-es.html">Política de Privacidad <span class="language-tag">[Español]</span></a>
-                <a href="privacypolicy-fr.html">Politique de Confidentialité <span class="language-tag">[Français]</span></a>
-                <a href="privacypolicy-it.html">Politica sulla Privacy <span class="language-tag">[Italiano]</span></a>
-            </div>
-        </section>
-
-        <section>
-            <h2>Contato</h2>
-            <div class="contact-info">
-                <a href="mailto:contatoilikedit@gmail.com">contatoilikedit@gmail.com</a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 ILikedit. Todos os direitos reservados.</p>
-    </footer>
+  <header class="shell"><a class="brand" href="#top"><i>✦</i><span><b>i</b>Likedit</span></a><nav class="langs" aria-label="Idioma"><button data-lang="pt" aria-pressed="true">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="fr">FR</button><button data-lang="it">IT</button></nav></header>
+  <main id="top">
+    <section class="shell hero"><div><p class="overline" data-t="eyebrow">Aplicativos Android independentes</p><h1 data-h="hero">Tecnologia feita com <em>intenção.</em></h1><p class="lead" data-t="lead">Criamos experiências simples, acolhedoras e cuidadosas — da primeira tela ao menor detalhe.</p><div class="actions"><a class="button primary" href="https://play.google.com/store/apps/dev?id=6779739041699610433" target="_blank" rel="noopener" data-t="play">Ver no Google Play ↗</a><a class="button secondary" href="#contact" data-t="contactButton">Entrar em contato</a></div></div><div class="moon" aria-hidden="true">☾</div></section>
+    <section class="content"><div class="shell"><div class="heading"><p class="overline" data-t="appsEyebrow">Nosso aplicativo</p><h2 data-t="appsTitle">Intuição em suas mãos</h2><p data-t="appsIntro">Uma experiência inspirada no simbolismo do Baralho Cigano, agradável, acessível e fácil de usar.</p></div><article class="card"><img class="icon" src="IconeIL512.png" alt="Ícone do Baralho Cigano"><div><h3>Baralho Cigano</h3><p data-t="appDescription">Tiragens, carta do dia, galeria e temas místicos em uma experiência multilíngue para reflexão pessoal.</p><span class="tag" data-t="androidTag">Disponível para Android</span></div><a class="button primary" href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano" target="_blank" rel="noopener" data-t="install">Conhecer o app ↗</a></article></div></section>
+    <section class="content" id="contact"><div class="shell grid"><article class="panel"><p class="overline" data-t="privacyEyebrow">Transparência</p><h3 data-t="privacyTitle">Privacidade em seu idioma</h3><p data-t="privacyText">Veja como os dados são tratados, quais serviços são usados e quais são os seus direitos.</p><div class="policies"><a href="https://sites.google.com/view/ilikedit/policy-pt">Português</a><a href="https://sites.google.com/view/ilikedit/policy-en">English</a><a href="https://sites.google.com/view/ilikedit/policy-es">Español</a><a href="https://sites.google.com/view/ilikedit/policy-fr">Français</a><a href="https://sites.google.com/view/ilikedit/policy-it">Italiano</a></div></article><article class="panel"><p class="overline" data-t="contactEyebrow">Contato</p><h3 data-t="contactTitle">Vamos conversar</h3><p data-t="contactText">Dúvidas, sugestões ou solicitações de privacidade são bem-vindas.</p><a class="mail" href="mailto:contato.ilikedit@gmail.com">contato.ilikedit@gmail.com</a></article></div></section>
+  </main>
+  <footer class="shell"><p>© <span id="year"></span> iLikedit. <span data-t="rights">Todos os direitos reservados.</span></p><p data-t="owner">Desenvolvido por Wanderley Neppel · Bento Gonçalves, Brasil</p></footer>
+  <script>
+    const copy={
+      pt:{eyebrow:'Aplicativos Android independentes',hero:'Tecnologia feita com <em>intenção.</em>',lead:'Criamos experiências simples, acolhedoras e cuidadosas — da primeira tela ao menor detalhe.',play:'Ver no Google Play ↗',contactButton:'Entrar em contato',appsEyebrow:'Nosso aplicativo',appsTitle:'Intuição em suas mãos',appsIntro:'Uma experiência inspirada no simbolismo do Baralho Cigano, agradável, acessível e fácil de usar.',appDescription:'Tiragens, carta do dia, galeria e temas místicos em uma experiência multilíngue para reflexão pessoal.',androidTag:'Disponível para Android',install:'Conhecer o app ↗',privacyEyebrow:'Transparência',privacyTitle:'Privacidade em seu idioma',privacyText:'Veja como os dados são tratados, quais serviços são usados e quais são os seus direitos.',contactEyebrow:'Contato',contactTitle:'Vamos conversar',contactText:'Dúvidas, sugestões ou solicitações de privacidade são bem-vindas.',rights:'Todos os direitos reservados.',owner:'Desenvolvido por Wanderley Neppel · Bento Gonçalves, Brasil'},
+      en:{eyebrow:'Independent Android apps',hero:'Technology made with <em>intention.</em>',lead:'We create simple, welcoming and thoughtful experiences — from the first screen to the smallest detail.',play:'View on Google Play ↗',contactButton:'Get in touch',appsEyebrow:'Our app',appsTitle:'Intuition in your hands',appsIntro:'An experience inspired by Lenormand symbolism, pleasant, accessible and easy to use.',appDescription:'Readings, daily card, gallery and mystical themes in a multilingual experience for personal reflection.',androidTag:'Available for Android',install:'Discover the app ↗',privacyEyebrow:'Transparency',privacyTitle:'Privacy in your language',privacyText:'Learn how data is handled, which services are used and what rights you have.',contactEyebrow:'Contact',contactTitle:'Let’s talk',contactText:'Questions, suggestions and privacy requests are welcome.',rights:'All rights reserved.',owner:'Developed by Wanderley Neppel · Bento Gonçalves, Brazil'},
+      es:{eyebrow:'Aplicaciones Android independientes',hero:'Tecnología hecha con <em>intención.</em>',lead:'Creamos experiencias simples, acogedoras y cuidadas, desde la primera pantalla hasta el menor detalle.',play:'Ver en Google Play ↗',contactButton:'Contactar',appsEyebrow:'Nuestra aplicación',appsTitle:'Intuición en tus manos',appsIntro:'Una experiencia inspirada en el simbolismo Lenormand, agradable, accesible y fácil de usar.',appDescription:'Lecturas, carta del día, galería y temas místicos en una experiencia multilingüe para la reflexión personal.',androidTag:'Disponible para Android',install:'Descubrir la app ↗',privacyEyebrow:'Transparencia',privacyTitle:'Privacidad en tu idioma',privacyText:'Consulta cómo se tratan los datos, qué servicios se usan y cuáles son tus derechos.',contactEyebrow:'Contacto',contactTitle:'Hablemos',contactText:'Agradecemos preguntas, sugerencias y solicitudes de privacidad.',rights:'Todos los derechos reservados.',owner:'Desarrollado por Wanderley Neppel · Bento Gonçalves, Brasil'},
+      fr:{eyebrow:'Applications Android indépendantes',hero:'Une technologie créée avec <em>intention.</em>',lead:'Nous créons des expériences simples, accueillantes et soignées, du premier écran au moindre détail.',play:'Voir sur Google Play ↗',contactButton:'Nous contacter',appsEyebrow:'Notre application',appsTitle:'L’intuition entre vos mains',appsIntro:'Une expérience inspirée du symbolisme Lenormand, agréable, accessible et facile à utiliser.',appDescription:'Tirages, carte du jour, galerie et thèmes mystiques dans une expérience multilingue.',androidTag:'Disponible sur Android',install:'Découvrir l’app ↗',privacyEyebrow:'Transparence',privacyTitle:'La confidentialité dans votre langue',privacyText:'Découvrez comment les données sont traitées, quels services sont utilisés et quels sont vos droits.',contactEyebrow:'Contact',contactTitle:'Parlons-en',contactText:'Questions, suggestions et demandes de confidentialité sont les bienvenues.',rights:'Tous droits réservés.',owner:'Développé par Wanderley Neppel · Bento Gonçalves, Brésil'},
+      it:{eyebrow:'App Android indipendenti',hero:'Tecnologia creata con <em>intenzione.</em>',lead:'Creiamo esperienze semplici, accoglienti e curate, dalla prima schermata al più piccolo dettaglio.',play:'Vedi su Google Play ↗',contactButton:'Contattaci',appsEyebrow:'La nostra app',appsTitle:'L’intuizione nelle tue mani',appsIntro:'Un’esperienza ispirata al simbolismo Lenormand, piacevole, accessibile e facile da usare.',appDescription:'Letture, carta del giorno, galleria e temi mistici in un’esperienza multilingue.',androidTag:'Disponibile per Android',install:'Scopri l’app ↗',privacyEyebrow:'Trasparenza',privacyTitle:'Privacy nella tua lingua',privacyText:'Scopri come vengono trattati i dati, quali servizi sono utilizzati e quali sono i tuoi diritti.',contactEyebrow:'Contatti',contactTitle:'Parliamone',contactText:'Domande, suggerimenti e richieste sulla privacy sono benvenuti.',rights:'Tutti i diritti riservati.',owner:'Sviluppato da Wanderley Neppel · Bento Gonçalves, Brasile'}
+    };
+    function language(lang){const c=copy[lang]||copy.pt;document.documentElement.lang=lang==='pt'?'pt-BR':lang;document.querySelectorAll('[data-t]').forEach(e=>e.textContent=c[e.dataset.t]);document.querySelectorAll('[data-h]').forEach(e=>e.innerHTML=c[e.dataset.h]);document.querySelectorAll('[data-lang]').forEach(e=>e.setAttribute('aria-pressed',e.dataset.lang===lang));try{localStorage.setItem('ilikedit-language',lang)}catch{}}
+    document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>language(b.dataset.lang));let lang='pt';try{lang=localStorage.getItem('ilikedit-language')||(navigator.language||'pt').slice(0,2)}catch{}language(copy[lang]?lang:'pt');document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
