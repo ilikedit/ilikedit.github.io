@@ -599,25 +599,73 @@
       flex-wrap: wrap;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE DESIGN REFINADO */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 30px; text-align: center; }
-      .hero-visual { order: -1; min-height: 280px; }
+      .hero { grid-template-columns: 1fr; gap: 36px; text-align: center; padding: 60px 0 70px; }
+      .hero-visual { order: -1; min-height: 260px; }
       .lead { margin-inline: auto; }
       .actions { justify-content: center; }
-      .app-card { grid-template-columns: 1fr; text-align: center; }
+      .app-card { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
       .app-info p { margin-inline: auto; }
       .badges-row { justify-content: center; }
-      .features-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 24px; }
       .nav-links { display: none; }
     }
-    @media (max-width: 480px) {
-      .header-wrap header { flex-direction: column; align-items: flex-start; padding: 14px 0; }
-      .langs { align-self: flex-end; }
-      .email-box { flex-direction: column; align-items: flex-start; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+
+    @media (max-width: 600px) {
+      .shell { width: calc(100% - 28px); }
+      header { min-height: 64px; }
+      .brand { font-size: 1.15rem; }
+      .brand-icon { width: 34px; height: 34px; font-size: 0.9rem; }
+      .langs { gap: 2px; padding: 3px; }
+      .langs button { padding: 4px 7px; font-size: 0.72rem; }
+
+      .hero { padding: 42px 0 54px; }
+      h1 { font-size: clamp(2rem, 8.5vw, 2.75rem); line-height: 1.18; margin-bottom: 16px; }
+      .lead { font-size: 0.98rem; line-height: 1.62; margin-bottom: 26px; }
+      
+      .actions { flex-direction: column; width: 100%; gap: 10px; }
+      .actions .btn { width: 100%; min-height: 48px; }
+
+      .moon-sphere { width: 160px; height: 160px; }
+      .moon-symbol { font-size: 3.8rem; }
+      .ring-1 { width: 240px; height: 240px; }
+      .ring-2 { width: 200px; height: 200px; }
+
+      section.section-pad { padding: 55px 0; }
+      .section-header { margin-bottom: 28px; }
+      .section-header h2 { font-size: 1.7rem; }
+
+      .app-card { padding: 26px 18px; border-radius: 18px; }
+      .app-icon { width: 96px; height: 96px; border-radius: 22px; margin-inline: auto; }
+      .app-info h3 { font-size: 1.4rem; }
+      .app-info p { font-size: 0.92rem; }
+      .badge { font-size: 0.74rem; padding: 4px 10px; }
+      .app-cta { width: 100%; margin-top: 8px; }
+      .app-cta .btn { width: 100%; }
+
+      .panel { padding: 24px 18px; border-radius: 18px; }
+      .panel h3 { font-size: 1.3rem; }
+      .panel-subtitle { font-size: 0.88rem; margin-bottom: 18px; }
+      .form-control { padding: 11px 14px; font-size: 0.92rem; }
+
+      .email-box { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; text-align: center; }
+      .email-address { font-size: 0.88rem; }
+      .copy-btn { width: 100%; padding: 9px; font-size: 0.84rem; }
+
+      .privacy-links { gap: 6px; }
+      .privacy-link { flex: 1 1 calc(50% - 6px); text-align: center; padding: 8px 10px; font-size: 0.8rem; }
+
+      .dev-badge-wrap { padding: 14px; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
     }
+
+    @media (max-width: 360px) {
+      .langs button { padding: 3px 5px; font-size: 0.68rem; }
+      .privacy-link { flex: 1 1 100%; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, ::before, ::after { animation: none !important; transition: none !important; }
     }
