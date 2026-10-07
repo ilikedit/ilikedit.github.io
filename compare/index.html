@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Política de Privacidade do aplicativo Compare — Economia e compras de supermercado, desenvolvido por iLikedit.">
+  <title>Política de Privacidade — Compare | iLikedit</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f8f6fb;
+      --card: #ffffff;
+      --text: #211c26;
+      --muted: #645b6e;
+      --accent: #5e3b8a;
+      --accent-light: #f0eaf7;
+      --line: #e3dbe8;
+      --link: #532d80;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #110e17;
+        --card: #1a1622;
+        --text: #eee9f5;
+        --muted: #b5abc2;
+        --accent: #c9a7ed;
+        --accent-light: #261f33;
+        --line: #352b42;
+        --link: #d8bcf5;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: clamp(24px, 5vw, 56px);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(25, 15, 35, 0.08);
+    }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; }
+    h1 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      line-height: 1.15;
+    }
+    h2 {
+      margin: 2.2rem 0 0.6rem;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    p, ul { margin: 0.65rem 0; }
+    ul { padding-left: 1.4rem; }
+    li { margin-bottom: 0.35rem; }
+    .intro, .updated { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="badge">Privacidade &amp; Transparência</span>
+    <h1>Política de Privacidade</h1>
+    <p class="intro"><strong>Aplicativo Compare — Economia Inteligente em Compras</strong></p>
+    <p class="updated">Última atualização e vigência: 06 de outubro de 2026.</p>
+  </header>
+
+  <h2>1. Visão Geral e Filosofia Local-First</h2>
+  <p>O <strong>Compare</strong> foi desenvolvido com base no princípio <em>Local-First</em> (local em primeiro lugar). O aplicativo é projetado para operar com autonomia e privacidade: todas as suas listas de compras, histórico de preços, notas fiscais e comparações de supermercados são armazenados prioritariamente no armazenamento local do seu próprio aparelho, sem que suas informações financeiras ou hábitos de consumo sejam comercializados.</p>
+
+  <h2>2. Responsável pelo Tratamento de Dados</h2>
+  <p>O aplicativo Compare é desenvolvido e mantido por Wanderley Neppel, sob o nome de fantasia <strong>iLikedit</strong>, com sede em Bento Gonçalves, Rio Grande do Sul, Brasil.</p>
+  <p>Contato do encarregado de privacidade: <a href="mailto:contato.ilikedit@gmail.com">contato.ilikedit@gmail.com</a>.</p>
+
+  <h2>3. Dados Armazenados Localmente no seu Dispositivo</h2>
+  <p>O banco de dados SQLite local (Room) do seu dispositivo armazena:</p>
+  <ul>
+    <li>Produtos cadastrados, descrições, categorias e códigos de barras (EAN/GTIN e balança).</li>
+    <li>Histórico de preços coletados ou importados e datas correspondentes.</li>
+    <li>Estabelecimentos cadastrados (supermercados, mercados, atacados) e localizações aproximadas associadas.</li>
+    <li>Listas de compras personalizadas, status de itens marcados e orçamentos mensais de despesas.</li>
+  </ul>
+  <p>Esses dados permanecem sob o seu controle no aparelho e podem ser excluídos a qualquer momento limpando os dados do aplicativo nas Configurações do Android ou ao desinstalar o app.</p>
+
+  <h2>4. Câmera e Scanner de Código de Barras</h2>
+  <p>O Compare utiliza a câmera do seu dispositivo para escanear códigos de barras de produtos e QR Codes de notas fiscais (NFC-e).</p>
+  <ul>
+    <li><strong>Processamento no Dispositivo (On-Device):</strong> O reconhecimento de códigos de barras é processado localmente em tempo real pelo Google ML Kit. As imagens em tempo real da câmera <em>não</em> são transmitidas para a nuvem.</li>
+    <li><strong>Leitura Inteligente de Cupons (Opcional):</strong> Caso você opte por fotografar um cupom fiscal impresso para digitalização automática via Inteligência Artificial, a imagem capturada é enviada exclusivamente de forma segura e pontual para extração textual dos itens através de APIs de visão computacional (OpenRouter), sem armazenamento prolongado ou compartilhamento para publicidade.</li>
+  </ul>
+
+  <h2>5. Importação de Notas Fiscais Eletrônicas (NFC-e e NFG)</h2>
+  <p>O aplicativo oferece ferramentas para importação de notas fiscais ao consumidor:</p>
+  <ul>
+    <li>Ao ler o QR Code ou digitar a chave de acesso de 44 dígitos, o aplicativo conecta-se diretamente ao portal público oficial da SEFAZ estadual correspondente ou permite a importação de arquivos CSV emitidos pelo programa Nota Fiscal Gaúcha (NFG).</li>
+    <li>Os dados de produtos, valores e estabelecimentos extraídos da nota são salvos estritamente no seu banco de dados local para cálculo de economia e comparação de preços.</li>
+  </ul>
+
+  <h2>6. Localização (Geolocalização)</h2>
+  <p>O Compare pode solicitar acesso à localização do dispositivo (aproximada ou precisa) para:</p>
+  <ul>
+    <li>Identificar e sugerir automaticamente o supermercado ou estabelecimento mais próximo em que você está comprando.</li>
+    <li>Calcular a distância entre estabelecimentos para otimizar sua rota de economia.</li>
+  </ul>
+  <p>A localização é consultada em primeiro plano no momento do uso e <em>não</em> é rastreada continuamente em segundo plano nem comercializada com terceiros.</p>
+
+  <h2>7. Serviços em Nuvem e Telemetria (Firebase)</h2>
+  <p>Para garantir segurança, estabilidade e aprimoramento contínuo, o Compare integra serviços do Google Firebase:</p>
+  <ul>
+    <li><strong>Autenticação Silenciosa (Firebase Auth Anônimo):</strong> Gera um identificador técnico exclusivo e anônimo (UID) por dispositivo para manter a integridade da sessão do usuário sem necessidade de formulários de cadastro ou fornecimento de senhas e e-mails.</li>
+    <li><strong>Google Analytics para Firebase:</strong> Coleta estatísticas agregadas e anônimas sobre o uso do aplicativo (telas mais acessadas, recursos utilizados, modelo de smartphone, versão do Android e relatórios de desempenho) para nos ajudar a identificar falhas e melhorar o aplicativo.</li>
+  </ul>
+
+  <h2>8. Não Compartilhamento e Não Venda de Dados</h2>
+  <p>Não vendemos, não alugamos e não comercializamos seus dados pessoais, listas de compras ou registros de gastos para corretoras de dados (*data brokers*), redes de anúncios de terceiros ou empresas de crédito.</p>
+
+  <h2>9. Bases Legais (LGPD)</h2>
+  <p>O tratamento de dados operacionais e técnicos descritos nesta política é fundamentado na Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 - LGPD):</p>
+  <ul>
+    <li><strong>Execução de serviço/funcionalidade:</strong> para prover a comparação de preços, leitura de códigos e gerenciamento de compras solicitadas por você.</li>
+    <li><strong>Consentimento:</strong> para acesso opcional à câmera e localização do dispositivo, revogáveis a qualquer momento nas configurações do sistema.</li>
+    <li><strong>Legítimo interesse:</strong> para métricas técnicas de estabilidade, prevenção de falhas e melhoria contínua do aplicativo.</li>
+  </ul>
+
+  <h2>10. Seus Direitos como Titular</h2>
+  <p>Em conformidade com a LGPD, você tem direito a:</p>
+  <ul>
+    <li>Confirmar a existência de tratamento e acessar seus dados.</li>
+    <li>Corrigir, atualizar ou solicitar a eliminação de dados associados.</li>
+    <li>Revogar permissões concedidas de câmera ou localização a qualquer momento nas configurações do Android.</li>
+    <li>Eliminar integralmente os dados locais simplesmente limpando o armazenamento do aplicativo ou desinstalando-o.</li>
+  </ul>
+  <p>Para dúvidas ou solicitações de direitos, entre em contato através do e-mail: <a href="mailto:contato.ilikedit@gmail.com">contato.ilikedit@gmail.com</a>.</p>
+
+  <h2>11. Alterações nesta Política</h2>
+  <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir novas funcionalidades do aplicativo ou adequações legais. A versão atualizada estará sempre acessível nesta mesma página web e indicada nas notas de atualização do app na Google Play Store.</p>
+
+  <footer>
+    <p><strong>Controlador:</strong> Wanderley Neppel (iLikedit)<br>
+    <strong>Cidade:</strong> Bento Gonçalves, RS, Brasil<br>
+    <strong>E-mail de Contato:</strong> <a href="mailto:contato.ilikedit@gmail.com">contato.ilikedit@gmail.com</a></p>
+    <p><a class="back-btn" href="../">← Voltar para iLikedit</a></p>
+  </footer>
+</main>
+</body>
+</html>
