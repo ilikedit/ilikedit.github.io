@@ -560,6 +560,10 @@
       object-fit: contain;
       border-radius: 9px;
       margin-bottom: 10px;
+      transition: opacity 0.22s ease;
+    }
+    .mini-card img.is-switching {
+      opacity: 0.35;
     }
     .mini-card strong {
       display: block;
@@ -577,11 +581,19 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       padding: 22px 24px;
+      margin-bottom: 24px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+    }
+    .decks-active-badge {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
     }
     .decks-chips {
       display: flex;
@@ -589,17 +601,32 @@
       gap: 8px;
     }
     .deck-chip {
-      padding: 6px 12px;
+      padding: 7px 14px;
       border-radius: 999px;
+      font-family: inherit;
       font-size: 0.82rem;
+      font-weight: 500;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(233, 184, 95, 0.22);
       color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .deck-chip:hover {
+      border-color: rgba(232, 184, 95, 0.58);
+      background: rgba(232, 184, 95, 0.14);
+      color: var(--gold-light);
     }
     .deck-chip.is-new {
-      border-color: rgba(232, 184, 95, 0.55);
-      background: rgba(232, 184, 95, 0.12);
+      border-color: rgba(232, 184, 95, 0.45);
       color: var(--gold-light);
+    }
+    .deck-chip.is-active {
+      background: linear-gradient(135deg, #f3cd80 0%, #e0a742 100%);
+      border-color: transparent;
+      color: #161021;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(224, 167, 66, 0.28);
     }
 
     /* FAQ */
@@ -963,53 +990,54 @@
         <p data-i18n="cardsIntro">Cada carta traz ilustrações cuidadas para facilitar a leitura intuitiva e o estudo dos símbolos tradicionais do Baralho Cigano.</p>
       </div>
 
+      <div class="decks-box">
+        <div>
+          <strong style="color:var(--gold-light); display:block; margin-bottom:4px;" data-i18n="decksLabel">Baralhos temáticos disponíveis no aplicativo:</strong>
+          <span style="font-size:0.86rem; color:var(--text-muted);" data-i18n="decksSub">Toque em um estilo abaixo para visualizar as cartas (carregamento dinâmico sob demanda).</span>
+          <span class="decks-active-badge" id="activeDeckLabel">Exibindo: Clássico</span>
+        </div>
+        <div class="decks-chips" role="group" aria-label="Selecionar estilo de baralho">
+          <button type="button" class="deck-chip is-active" data-deck="classico" aria-pressed="true">Clássico</button>
+          <button type="button" class="deck-chip is-new" data-deck="zen_japones" aria-pressed="false">✦ Zen Japonês</button>
+          <button type="button" class="deck-chip" data-deck="dourado_mistico" aria-pressed="false">Dourado Místico</button>
+          <button type="button" class="deck-chip" data-deck="floresta_encantada" aria-pressed="false">Floresta Encantada</button>
+          <button type="button" class="deck-chip" data-deck="celestial" aria-pressed="false">Celestial</button>
+          <button type="button" class="deck-chip" data-deck="rosa_vintage" aria-pressed="false">Rosa Vintage</button>
+          <button type="button" class="deck-chip" data-deck="jogo_esperanca" aria-pressed="false">Jogo da Esperança (1799)</button>
+          <button type="button" class="deck-chip" data-deck="chines_milenar" aria-pressed="false">Chinês Milenar</button>
+        </div>
+      </div>
+
       <div class="cards-grid">
         <div class="mini-card">
-          <img src="assets/card_1.webp" alt="Carta 1 — O Cavaleiro" loading="lazy">
+          <img data-card-num="1" data-card-name="Carta 1 — O Cavaleiro" src="assets/card_1.webp" alt="Carta 1 — O Cavaleiro (Clássico)" loading="lazy">
           <strong>01 · O Cavaleiro</strong>
           <span>Movimento &amp; Notícias</span>
         </div>
         <div class="mini-card">
-          <img src="assets/card_5.webp" alt="Carta 5 — A Árvore" loading="lazy">
+          <img data-card-num="5" data-card-name="Carta 5 — A Árvore" src="assets/card_5.webp" alt="Carta 5 — A Árvore (Clássico)" loading="lazy">
           <strong>05 · A Árvore</strong>
           <span>Saúde &amp; Raízes</span>
         </div>
         <div class="mini-card">
-          <img src="assets/card_24.webp" alt="Carta 24 — O Coração" loading="lazy">
+          <img data-card-num="24" data-card-name="Carta 24 — O Coração" src="assets/card_24.webp" alt="Carta 24 — O Coração (Clássico)" loading="lazy">
           <strong>24 · O Coração</strong>
           <span>Afeto &amp; Paixão</span>
         </div>
         <div class="mini-card">
-          <img src="assets/card_25.webp" alt="Carta 25 — A Aliança" loading="lazy">
+          <img data-card-num="25" data-card-name="Carta 25 — A Aliança" src="assets/card_25.webp" alt="Carta 25 — A Aliança (Clássico)" loading="lazy">
           <strong>25 · A Aliança</strong>
           <span>União &amp; Acordos</span>
         </div>
         <div class="mini-card">
-          <img src="assets/card_31.webp" alt="Carta 31 — O Sol" loading="lazy">
+          <img data-card-num="31" data-card-name="Carta 31 — O Sol" src="assets/card_31.webp" alt="Carta 31 — O Sol (Clássico)" loading="lazy">
           <strong>31 · O Sol</strong>
           <span>Clareza &amp; Sucesso</span>
         </div>
         <div class="mini-card">
-          <img src="assets/card_33.webp" alt="Carta 33 — A Chave" loading="lazy">
+          <img data-card-num="33" data-card-name="Carta 33 — A Chave" src="assets/card_33.webp" alt="Carta 33 — A Chave (Clássico)" loading="lazy">
           <strong>33 · A Chave</strong>
           <span>Soluções &amp; Caminhos</span>
-        </div>
-      </div>
-
-      <div class="decks-box">
-        <div>
-          <strong style="color:var(--gold-light); display:block; margin-bottom:4px;" data-i18n="decksLabel">Baralhos temáticos disponíveis no aplicativo:</strong>
-          <span style="font-size:0.86rem; color:var(--text-muted);" data-i18n="decksSub">Carregamento dinâmico sob demanda para economizar espaço no celular.</span>
-        </div>
-        <div class="decks-chips">
-          <span class="deck-chip">Clássico</span>
-          <span class="deck-chip is-new">✦ Zen Japonês (Novo)</span>
-          <span class="deck-chip">Dourado Místico</span>
-          <span class="deck-chip">Floresta Encantada</span>
-          <span class="deck-chip">Celestial</span>
-          <span class="deck-chip">Rosa Vintage</span>
-          <span class="deck-chip">Jogo da Esperança (1799)</span>
-          <span class="deck-chip">Mandala Violeta</span>
         </div>
       </div>
     </section>
@@ -1211,6 +1239,83 @@
 
       flipBtn.addEventListener("click", revealCard);
       drawAgainBtn.addEventListener("click", revealCard);
+    })();
+
+    const DECKS_CONFIG = {
+      classico: {
+        labels: { "pt-BR": "Clássico" },
+        getSrc: (num) => `assets/card_${num}.webp`
+      },
+      zen_japones: {
+        labels: { "pt-BR": "Zen Japonês" },
+        getSrc: (num) => `assets/decks/zen_japones/card_${num}.webp`
+      },
+      dourado_mistico: {
+        labels: { "pt-BR": "Dourado Místico" },
+        getSrc: (num) => `assets/decks/dourado_mistico/card_${num}.webp`
+      },
+      floresta_encantada: {
+        labels: { "pt-BR": "Floresta Encantada" },
+        getSrc: (num) => `assets/decks/floresta_encantada/card_${num}.webp`
+      },
+      celestial: {
+        labels: { "pt-BR": "Celestial" },
+        getSrc: (num) => `assets/decks/celestial/card_${num}.webp`
+      },
+      rosa_vintage: {
+        labels: { "pt-BR": "Rosa Vintage" },
+        getSrc: (num) => `assets/decks/rosa_vintage/card_${num}.webp`
+      },
+      jogo_esperanca: {
+        labels: { "pt-BR": "Jogo da Esperança (1799)" },
+        getSrc: (num) => `assets/decks/jogo_esperanca/card_${num}.webp`
+      },
+      chines_milenar: {
+        labels: { "pt-BR": "Chinês Milenar" },
+        getSrc: (num) => `assets/decks/chines_milenar/card_${num}.webp`
+      }
+    };
+
+    (function initDeckShowcase() {
+      const lang = "pt-BR";
+      const buttons = document.querySelectorAll(".deck-chip[data-deck]");
+      const cardImgs = document.querySelectorAll(".mini-card img[data-card-num]");
+      const activeLabel = document.getElementById("activeDeckLabel");
+      let activeDeckId = "classico";
+
+      function selectDeck(deckId) {
+        const deck = DECKS_CONFIG[deckId];
+        if (!deck || deckId === activeDeckId) return;
+        activeDeckId = deckId;
+        const deckName = deck.labels[lang] || deck.labels["pt-BR"];
+
+        buttons.forEach((btn) => {
+          const selected = btn.dataset.deck === deckId;
+          btn.classList.toggle("is-active", selected);
+          btn.setAttribute("aria-pressed", selected ? "true" : "false");
+        });
+
+        if (activeLabel) {
+          activeLabel.textContent = `Exibindo: ${deckName}`;
+        }
+
+        cardImgs.forEach((img) => {
+          const num = img.dataset.cardNum;
+          const cardName = img.dataset.cardName || `Carta ${num}`;
+          const nextSrc = deck.getSrc(num);
+          img.classList.add("is-switching");
+          const onDone = () => img.classList.remove("is-switching");
+          img.onload = onDone;
+          img.onerror = onDone;
+          img.src = nextSrc;
+          img.alt = `${cardName} (${deckName})`;
+          if (img.complete) onDone();
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => selectDeck(btn.dataset.deck));
+      });
     })();
   </script>
 </body>
