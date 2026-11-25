@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#120e1a">
   <meta name="google-site-verification" content="TO0PRFINrCJlEP2QwQWAzKDHq2Q5ZXyq_6s-qbawoak" />
-  <meta name="description" content="iLikedit cria experiências Android cuidadosas, acessíveis e intuitivas. Baralho Cigano, ferramentas místicas e tecnologia com propósito.">
+  <meta name="description" content="iLikedit cria aplicativos Android independentes feitos com intenção: conheça o Baralho Cigano (Oráculo com IA e 36 cartas) e o Compare (preços de supermercado e notas fiscais NFC-e).">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="iLikedit — Aplicativos Android & Design Sensível">
-  <meta property="og:description" content="Experiências digitais cuidadosas e intuitivas para Android. Conheça o Baralho Cigano.">
+  <meta property="og:title" content="iLikedit — Aplicativos Android Independentes">
+  <meta property="og:description" content="Pequenos grandes apps para a sua rotina: conheça o Baralho Cigano e o Compare Preços e Notas Fiscais para Android.">
   <meta property="og:image" content="https://ilikedit.com.br/LogoPlayStore.png">
   <meta property="og:url" content="https://ilikedit.com.br/">
   <link rel="canonical" href="https://ilikedit.com.br/">
@@ -25,10 +25,15 @@
       color-scheme: dark;
       --bg: #0e0a15;
       --bg-alt: #151020;
-      --card: rgba(26, 20, 38, 0.75);
-      --card-hover: rgba(36, 28, 52, 0.85);
+      --card: rgba(26, 20, 38, 0.78);
+      --card-hover: rgba(36, 28, 52, 0.88);
       --card-border: rgba(233, 184, 95, 0.16);
-      --card-border-hover: rgba(233, 184, 95, 0.4);
+      --card-border-hover: rgba(233, 184, 95, 0.42);
+      --emerald: #34d399;
+      --emerald-light: #a7f3d0;
+      --emerald-border: rgba(52, 211, 153, 0.24);
+      --emerald-border-hover: rgba(52, 211, 153, 0.55);
+      --emerald-glow: rgba(52, 211, 153, 0.22);
       --text: #f7f3fc;
       --text-muted: #b9adcb;
       --gold: #e8b85f;
@@ -44,19 +49,20 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       color: var(--text);
       background-color: var(--bg);
-      background-image: 
+      background-image:
         radial-gradient(circle at 18% 12%, rgba(132, 85, 219, 0.22), transparent 420px),
-        radial-gradient(circle at 85% 25%, rgba(232, 184, 95, 0.14), transparent 460px),
-        radial-gradient(circle at 50% 80%, rgba(108, 62, 179, 0.12), transparent 520px);
+        radial-gradient(circle at 85% 25%, rgba(232, 184, 95, 0.13), transparent 460px),
+        radial-gradient(circle at 75% 58%, rgba(52, 211, 153, 0.08), transparent 480px);
       background-attachment: fixed;
       font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
       font-size: 16px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -69,7 +75,7 @@
       z-index: 100;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(14, 10, 21, 0.78);
+      background: rgba(14, 10, 21, 0.8);
       border-bottom: 1px solid var(--line);
     }
     header {
@@ -172,13 +178,13 @@
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.16fr 0.84fr;
       align-items: center;
       gap: 48px;
-      padding: 85px 0 90px;
+      padding: 80px 0 85px;
     }
     h1 {
-      font-size: clamp(2.4rem, 5.2vw, 4.3rem);
+      font-size: clamp(2.25rem, 4.7vw, 3.85rem);
       margin-bottom: 20px;
     }
     h1 em {
@@ -189,7 +195,7 @@
     }
     .lead {
       color: var(--text-muted);
-      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      font-size: clamp(1.04rem, 1.5vw, 1.2rem);
       max-width: 580px;
       line-height: 1.7;
       margin-bottom: 34px;
@@ -216,9 +222,7 @@
       cursor: pointer;
       border: 1px solid transparent;
     }
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
     .btn-primary {
       background: linear-gradient(135deg, #fae4b8 0%, #e8b85f 100%);
       color: #1a1205;
@@ -226,6 +230,14 @@
     }
     .btn-primary:hover {
       box-shadow: 0 14px 30px -4px rgba(232, 184, 95, 0.55);
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%);
+      color: #062116;
+      box-shadow: 0 10px 24px -6px rgba(16, 185, 129, 0.4);
+    }
+    .btn-emerald:hover {
+      box-shadow: 0 14px 30px -4px rgba(16, 185, 129, 0.55);
     }
     .btn-outline {
       background: rgba(255, 255, 255, 0.04);
@@ -237,118 +249,209 @@
       background: rgba(255, 255, 255, 0.09);
       border-color: var(--gold);
     }
+    .btn-outline-emerald {
+      background: rgba(52, 211, 153, 0.05);
+      color: var(--emerald-light);
+      border-color: var(--emerald-border);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline-emerald:hover {
+      background: rgba(52, 211, 153, 0.14);
+      border-color: var(--emerald);
+    }
 
-    /* HERO VISUAL / MOON DISPLAY */
+    /* HERO DUAL-APP STUDIO VISUAL */
     .hero-visual {
       position: relative;
       display: grid;
       place-items: center;
-      min-height: 380px;
+      min-height: 360px;
     }
-    .moon-sphere {
-      position: relative;
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #fff2d6, #d99f43 55%, #3c2409 90%);
-      box-shadow: 
-        0 0 60px rgba(232, 184, 95, 0.45),
-        inset 0 0 25px rgba(255, 255, 255, 0.6);
-      display: grid;
-      place-items: center;
-      z-index: 2;
-    }
-    .moon-symbol {
-      font-family: "Cinzel", serif;
-      font-size: 5rem;
-      color: #1a1104;
-      opacity: 0.85;
-      user-select: none;
-    }
-    .orbit-ring {
+    .studio-glow {
       position: absolute;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
-      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 30% 35%, rgba(232, 184, 95, 0.25), transparent 55%),
+        radial-gradient(circle at 72% 68%, rgba(52, 211, 153, 0.22), transparent 55%);
+      filter: blur(26px);
       pointer-events: none;
-      animation: spin 32s linear infinite;
     }
-    .ring-1 { width: 330px; height: 330px; }
-    .ring-2 { 
-      width: 270px; 
-      height: 270px; 
-      border-style: dashed; 
-      border-color: rgba(232, 184, 95, 0.22);
-      animation-direction: reverse;
-      animation-duration: 24s;
+    .studio-orbit {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 1px dashed rgba(247, 220, 167, 0.16);
+      pointer-events: none;
+      animation: spin 40s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+    .dual-tiles {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: min(370px, 100%);
+    }
+    .hero-tile {
+      background: rgba(26, 20, 38, 0.85);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 20px 16px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.5);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-tile.tile-gold { transform: translateY(-10px); }
+    .hero-tile.tile-emerald {
+      transform: translateY(14px);
+      border-color: var(--emerald-border);
+    }
+    .hero-tile:hover {
+      transform: translateY(-14px);
+    }
+    .hero-tile.tile-gold:hover {
+      border-color: var(--gold);
+      box-shadow: 0 24px 52px rgba(232, 184, 95, 0.2);
+    }
+    .hero-tile.tile-emerald:hover {
+      border-color: var(--emerald);
+      box-shadow: 0 24px 52px rgba(52, 211, 153, 0.2);
+    }
+    .hero-tile img {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48);
+    }
+    .hero-tile strong {
+      display: block;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+    .hero-tile span {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .hero-tile.tile-gold span { color: var(--gold-light); }
+    .hero-tile.tile-emerald span { color: var(--emerald-light); }
 
     /* SECTION GLOBAL */
-    section.section-pad {
-      padding: 80px 0;
-    }
+    section.section-pad { padding: 72px 0; }
     .section-header {
-      max-width: 680px;
-      margin-bottom: 40px;
+      max-width: 700px;
+      margin-bottom: 38px;
     }
     .section-header h2 {
-      font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+      font-size: clamp(1.85rem, 3.6vw, 2.55rem);
       margin-bottom: 12px;
     }
     .section-header p {
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 1.04rem;
     }
 
-    /* SHOWCASE APP CARD */
+    /* DUAL FEATURED APP CARDS */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
     .app-card {
       background: var(--card);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      padding: 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
       backdrop-filter: blur(14px);
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 36px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
       position: relative;
       overflow: hidden;
+      transition: var(--transition);
     }
     .app-card::before {
       content: "";
       position: absolute;
-      top: -40%;
-      right: -10%;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(232, 184, 95, 0.12), transparent 70%);
+      top: -35%;
+      right: -12%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(232, 184, 95, 0.14), transparent 70%);
       pointer-events: none;
     }
-    .app-icon-wrap {
-      position: relative;
+    .app-card.theme-emerald {
+      border-color: var(--emerald-border);
+    }
+    .app-card.theme-emerald::before {
+      background: radial-gradient(circle, rgba(52, 211, 153, 0.14), transparent 70%);
+    }
+    .app-card.theme-gold:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+    }
+    .app-card.theme-emerald:hover {
+      border-color: var(--emerald-border-hover);
+      transform: translateY(-4px);
+    }
+    .app-card-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
     .app-icon {
-      width: 124px;
-      height: 124px;
-      border-radius: 28px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      width: 82px;
+      height: 82px;
+      border-radius: 20px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
       border: 1px solid var(--card-border);
       display: block;
+      flex-shrink: 0;
       transition: var(--transition);
     }
-    .app-card:hover .app-icon {
-      transform: scale(1.04) rotate(1deg);
-      border-color: var(--gold);
-    }
-    .app-info h3 {
-      font-size: 1.7rem;
+    .theme-emerald .app-icon { border-color: var(--emerald-border); }
+    .app-card:hover .app-icon { transform: scale(1.04) rotate(1deg); }
+    .app-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(232, 184, 95, 0.1);
+      border: 1px solid rgba(232, 184, 95, 0.25);
       margin-bottom: 8px;
     }
-    .app-info p {
+    .theme-emerald .app-status {
+      color: var(--emerald-light);
+      background: rgba(52, 211, 153, 0.1);
+      border-color: rgba(52, 211, 153, 0.28);
+    }
+    .app-card-head h3 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+    .app-desc {
       color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.65;
       margin-bottom: 18px;
-      max-width: 540px;
     }
     .badges-row {
       display: flex;
@@ -359,27 +462,30 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 12px;
+      padding: 5px 11px;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       color: var(--gold-light);
       background: rgba(232, 184, 95, 0.08);
       border: 1px solid rgba(232, 184, 95, 0.18);
     }
-    .app-cta {
+    .theme-emerald .badge {
+      color: var(--emerald-light);
+      background: rgba(52, 211, 153, 0.08);
+      border-color: rgba(52, 211, 153, 0.22);
+    }
+    .app-actions {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
+      padding-top: 6px;
     }
-    .google-badge-img {
-      height: 52px;
-      transition: var(--transition);
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-    }
-    .google-badge-img:hover {
-      transform: scale(1.04);
+    .app-actions .btn {
+      flex: 1 1 170px;
+      min-height: 44px;
+      padding: 0 18px;
+      font-size: 0.88rem;
     }
 
     /* FEATURES GRID */
@@ -449,9 +555,7 @@
     }
 
     /* DIRECT CONTACT FORM */
-    .form-group {
-      margin-bottom: 18px;
-    }
+    .form-group { margin-bottom: 18px; }
     .form-group label {
       display: block;
       font-size: 0.82rem;
@@ -609,13 +713,11 @@
 
     /* RESPONSIVE DESIGN REFINADO */
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 36px; text-align: center; padding: 60px 0 70px; }
-      .hero-visual { order: -1; min-height: 260px; }
+      .hero { grid-template-columns: 1fr; gap: 36px; text-align: center; padding: 56px 0 64px; }
+      .hero-visual { order: -1; min-height: 230px; }
       .lead { margin-inline: auto; }
       .actions { justify-content: center; }
-      .app-card { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
-      .app-info p { margin-inline: auto; }
-      .badges-row { justify-content: center; }
+      .apps-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; gap: 16px; }
       .contact-grid { grid-template-columns: 1fr; gap: 24px; }
       .nav-links { display: none; }
@@ -629,29 +731,26 @@
       .langs { gap: 2px; padding: 3px; }
       .langs button { padding: 4px 7px; font-size: 0.72rem; }
 
-      .hero { padding: 42px 0 54px; }
-      h1 { font-size: clamp(2rem, 8.5vw, 2.75rem); line-height: 1.18; margin-bottom: 16px; }
+      .hero { padding: 38px 0 48px; }
+      h1 { font-size: clamp(1.9rem, 8.2vw, 2.65rem); line-height: 1.18; margin-bottom: 16px; }
       .lead { font-size: 0.98rem; line-height: 1.62; margin-bottom: 26px; }
-      
+
       .actions { flex-direction: column; width: 100%; gap: 10px; }
       .actions .btn { width: 100%; min-height: 48px; }
 
-      .moon-sphere { width: 160px; height: 160px; }
-      .moon-symbol { font-size: 3.8rem; }
-      .ring-1 { width: 240px; height: 240px; }
-      .ring-2 { width: 200px; height: 200px; }
+      .dual-tiles { gap: 12px; width: min(320px, 100%); }
+      .hero-tile { padding: 16px 12px; }
+      .hero-tile img { width: 68px; height: 68px; border-radius: 16px; }
 
-      section.section-pad { padding: 55px 0; }
+      section.section-pad { padding: 52px 0; }
       .section-header { margin-bottom: 28px; }
-      .section-header h2 { font-size: 1.7rem; }
+      .section-header h2 { font-size: 1.65rem; }
 
-      .app-card { padding: 26px 18px; border-radius: 18px; }
-      .app-icon { width: 96px; height: 96px; border-radius: 22px; margin-inline: auto; }
-      .app-info h3 { font-size: 1.4rem; }
-      .app-info p { font-size: 0.92rem; }
-      .badge { font-size: 0.74rem; padding: 4px 10px; }
-      .app-cta { width: 100%; margin-top: 8px; }
-      .app-cta .btn { width: 100%; }
+      .app-card { padding: 24px 18px; border-radius: 18px; }
+      .app-icon { width: 68px; height: 68px; border-radius: 16px; }
+      .app-card-head h3 { font-size: 1.35rem; }
+      .app-desc { font-size: 0.92rem; }
+      .badge { font-size: 0.73rem; padding: 4px 9px; }
 
       .panel { padding: 24px 18px; border-radius: 18px; }
       .panel h3 { font-size: 1.3rem; }
@@ -690,9 +789,9 @@
       </a>
 
       <nav class="nav-links" aria-label="Navegação">
-        <a href="#app" data-t="navApp">O Aplicativo</a>
+        <a href="#app" data-t="navApp">Nossos Apps</a>
         <a href="#features" data-t="navFeatures">Diferenciais</a>
-        <a href="#contact" data-t="navContact">Contato & Suporte</a>
+        <a href="#contact" data-t="navContact">Contato &amp; Suporte</a>
       </nav>
 
       <nav class="langs" aria-label="Seletor de idioma">
@@ -710,12 +809,12 @@
     <!-- HERO -->
     <section class="shell hero">
       <div>
-        <span class="eyebrow" data-t="eyebrow">Aplicativos Android Independentes</span>
-        <h1 data-h="hero">Tecnologia feita com <em>intenção.</em></h1>
-        <p class="lead" data-t="lead">Criamos experiências digitais cuidadosas, acolhedoras e intuitivas — combinando design sensível com engenharia limpa da primeira tela ao menor detalhe.</p>
+        <span class="eyebrow" data-t="eyebrow">Tecnologia feita com intenção.</span>
+        <h1 data-h="hero">Pequenos grandes apps para a <em>sua rotina.</em></h1>
+        <p class="lead" data-t="lead">Criamos aplicativos Android independentes com design limpo, utilidade real e respeito à sua privacidade — da economia no supermercado à calma de um momento de reflexão.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano" target="_blank" rel="noopener" data-t="play">
-            <span>Ver no Google Play</span> ↗
+          <a class="btn btn-primary" href="#app" data-t="exploreApps">
+            <span>Conhecer Nossos Apps</span> ↓
           </a>
           <a class="btn btn-outline" href="#contact" data-t="contactButton">
             <span>Falar com o Desenvolvedor</span>
@@ -723,66 +822,120 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit-ring ring-1"></div>
-        <div class="orbit-ring ring-2"></div>
-        <div class="moon-sphere">
-          <div class="moon-symbol">☾</div>
+      <div class="hero-visual">
+        <div class="studio-glow" aria-hidden="true"></div>
+        <div class="studio-orbit" aria-hidden="true"></div>
+        <div class="dual-tiles">
+          <a class="hero-tile tile-gold" href="baralho-cigano/">
+            <img src="baralho-cigano/assets/ic_launcher_artwork.webp" alt="Ícone do Baralho Cigano">
+            <div>
+              <strong>Baralho Cigano</strong>
+              <span data-t="tileBaralhoSub">Oráculo IA &amp; 36 Cartas</span>
+            </div>
+          </a>
+          <a class="hero-tile tile-emerald" href="compare-precos/">
+            <img src="compare-precos/assets/icon.webp" alt="Ícone do Compare Preços e Notas Fiscais">
+            <div>
+              <strong>Compare</strong>
+              <span data-t="tileCompareSub">Preços &amp; Notas NFC-e</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- SHOWCASE DO APP -->
+    <!-- SHOWCASE DOS APPS -->
     <section class="shell section-pad" id="app">
       <div class="section-header">
-        <span class="eyebrow" data-t="appsEyebrow">Nosso Destaque</span>
-        <h2 data-t="appsTitle">Intuição & Sabedoria em Suas Mãos</h2>
-        <p data-t="appsIntro">Uma experiência inspirada na rica tradição do Baralho Cigano (Lenormand), construída para oferecer reflexões claras em uma interface fluida e sem distrações.</p>
+        <span class="eyebrow" data-t="appsEyebrow">Nossos Aplicativos</span>
+        <h2 data-t="appsTitle">Feitos para Facilitar e Inspirar o Dia a Dia</h2>
+        <p data-t="appsIntro">Dois aplicativos Android independentes com foco em experiência fluida, funcionamento offline e dados salvos no seu próprio aparelho.</p>
       </div>
 
-      <article class="app-card">
-        <div class="app-icon-wrap">
-          <img class="app-icon" src="IconeIL512.png" alt="Ícone do Baralho Cigano">
-        </div>
-        <div class="app-info">
-          <h3>Baralho Cigano</h3>
-          <p data-t="appDescription">Tiragens clássicas, carta do dia diária, galeria completa das 36 cartas e múltiplos temas visuais místicos em uma experiência multilíngue para autoconhecimento.</p>
-          <div class="badges-row">
-            <span class="badge" data-t="badgeCards">✦ 36 Cartas Lenormand</span>
-            <span class="badge" data-t="badgeThemes">✦ Temas Visuais & Versos</span>
-            <span class="badge" data-t="badgePrivacy">✦ Dados Salvos no Aparelho</span>
-            <span class="badge" data-t="androidTag">✦ Android Oficial</span>
+      <div class="apps-grid">
+        <!-- CARD 1: BARALHO CIGANO -->
+        <article class="app-card theme-gold">
+          <div>
+            <div class="app-card-top">
+              <img class="app-icon" src="baralho-cigano/assets/ic_launcher_artwork.webp" alt="Ícone do Baralho Cigano">
+              <div class="app-card-head">
+                <span class="app-status" data-t="baralhoBadge">★ 4,4 · 10.000+ downloads</span>
+                <h3>Baralho Cigano</h3>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="app-cta">
-          <a href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano" target="_blank" rel="noopener" title="Baixar na Google Play Store">
-            <img class="google-badge-img" src="LogoPlayStore.png" alt="Disponível no Google Play">
-          </a>
-          <a class="btn btn-primary" style="font-size:0.86rem; padding: 0 18px; min-height: 42px;" href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano" target="_blank" rel="noopener" data-t="install">
-            Instalar App ↗
-          </a>
-          <a class="btn btn-outline" style="font-size:0.84rem; padding: 0 16px; min-height: 40px;" href="baralho-cigano/">
-            Ver Página do App →
-          </a>
-        </div>
-      </article>
+
+          <div>
+            <p class="app-desc" data-t="appDescription">Oráculo com IA (Amor, Negócios e Geral), Carta do Dia, significados detalhados das 36 cartas Lenormand e 8 baralhos temáticos em 7 idiomas.</p>
+            <div class="badges-row">
+              <span class="badge" data-t="bBadge1">✦ Oráculo com IA</span>
+              <span class="badge" data-t="bBadge2">✦ 36 Cartas Lenormand</span>
+              <span class="badge" data-t="bBadge3">✦ 8 Baralhos Temáticos</span>
+              <span class="badge" data-t="bBadge4">✦ Offline</span>
+            </div>
+          </div>
+
+          <div class="app-actions">
+            <a class="btn btn-primary" href="baralho-cigano/" data-t="learnMore">
+              Conhecer o App →
+            </a>
+            <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano&referrer=utm_source%3Dsite%26utm_medium%3Dhome%26utm_campaign%3Dbaralho_cigano" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a1.76 1.76 0 0 1-.41-1.132V2.946c0-.43.153-.832.41-1.132zm11.24 11.243l2.637 2.638-11.087 6.322 8.45-8.96zm3.884-1.856l3.012 1.718c.81.462.81 1.7 0 2.162l-3.012 1.718-2.852-2.852 2.852-2.746zM6.4 1.983l11.087 6.322-2.637 2.638-8.45-8.96z"/></svg>
+              <span>Google Play ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- CARD 2: COMPARE -->
+        <article class="app-card theme-emerald">
+          <div>
+            <div class="app-card-top">
+              <img class="app-icon" src="compare-precos/assets/icon.webp" alt="Ícone do Compare Preços e Notas Fiscais">
+              <div class="app-card-head">
+                <span class="app-status" data-t="compareBadge">Grátis · 100% Local-First</span>
+                <h3>Compare</h3>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="app-desc" data-t="compareDescription">Escaneie o QR Code de notas fiscais (NFC-e), leia códigos de barras no supermercado, compare o ranking de preços da sua lista e acompanhe seu orçamento mensal.</p>
+            <div class="badges-row">
+              <span class="badge" data-t="cBadge1">✦ Leitor NFC-e / SEFAZ</span>
+              <span class="badge" data-t="cBadge2">✦ Ranking de Mercados</span>
+              <span class="badge" data-t="cBadge3">✦ Scanner EAN</span>
+              <span class="badge" data-t="cBadge4">✦ Offline</span>
+            </div>
+          </div>
+
+          <div class="app-actions">
+            <a class="btn btn-emerald" href="compare-precos/" data-t="learnMore">
+              Conhecer o App →
+            </a>
+            <a class="btn btn-outline-emerald" href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dhome%26utm_campaign%3Dcompare_precos" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a1.76 1.76 0 0 1-.41-1.132V2.946c0-.43.153-.832.41-1.132zm11.24 11.243l2.637 2.638-11.087 6.322 8.45-8.96zm3.884-1.856l3.012 1.718c.81.462.81 1.7 0 2.162l-3.012 1.718-2.852-2.852 2.852-2.746zM6.4 1.983l11.087 6.322-2.637 2.638-8.45-8.96z"/></svg>
+              <span>Google Play ↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
 
       <!-- 3 COLUNAS DE DIFERENCIAIS -->
       <div class="features-grid" id="features">
         <div class="feat-card">
           <div class="feat-icon">✦</div>
           <h4 data-t="feat1Title">Design Focado no Essencial</h4>
-          <p data-t="feat1Desc">Interface pensada para transmitir calma e concentração, sem poluição visual ou telas desnecessárias.</p>
+          <p data-t="feat1Desc">Interfaces pensadas para transmitir clareza e praticidade, sem poluição visual ou telas desnecessárias.</p>
         </div>
         <div class="feat-card">
           <div class="feat-icon">🔒</div>
-          <h4 data-t="feat2Title">Privacidade Respeitada</h4>
-          <p data-t="feat2Desc">Suas tiragens e histórico ficam armazenados no seu dispositivo. Sem login obrigatório e sem venda de dados.</p>
+          <h4 data-t="feat2Title">Privacidade Local-First</h4>
+          <p data-t="feat2Desc">Suas tiragens, notas fiscais e listas ficam armazenadas no seu dispositivo. Sem login obrigatório e sem venda de dados.</p>
         </div>
         <div class="feat-card">
-          <div class="feat-icon">🌍</div>
-          <h4 data-t="feat3Title">Nativo & Multilíngue</h4>
-          <p data-t="feat3Desc">Construído em conformidade com as diretrizes do Android e traduzido para 5 idiomas com alta fidelidade cultural.</p>
+          <div class="feat-icon">📱</div>
+          <h4 data-t="feat3Title">Android Nativo &amp; Leve</h4>
+          <p data-t="feat3Desc">Construídos em conformidade com as diretrizes oficiais do Android para oferecer agilidade, economia de bateria e uso offline.</p>
         </div>
       </div>
     </section>
@@ -790,12 +943,12 @@
     <!-- CONTATO & PRIVACIDADE PROFISSIONAL -->
     <section class="shell section-pad" id="contact">
       <div class="contact-grid">
-        
+
         <!-- FORMULÁRIO DE CONTATO DIRETO -->
         <article class="panel">
-          <span class="eyebrow" data-t="contactEyebrow">Suporte & Comunicação</span>
+          <span class="eyebrow" data-t="contactEyebrow">Suporte &amp; Comunicação</span>
           <h3 data-t="contactTitle">Envie uma Mensagem</h3>
-          <p class="panel-subtitle" data-t="contactSubtitle">Precisa de suporte com o Baralho Cigano, quer propor uma ideia ou falar sobre privacidade? Estamos à disposição.</p>
+          <p class="panel-subtitle" data-t="contactSubtitle">Precisa de suporte com o Baralho Cigano ou com o Compare, quer propor uma ideia ou falar sobre privacidade? Estamos à disposição.</p>
 
           <div id="formStatus" class="form-feedback"></div>
 
@@ -809,6 +962,7 @@
               <label for="subjectInput" data-t="labelSubject">Assunto</label>
               <select id="subjectInput" class="form-control">
                 <option value="Suporte - Baralho Cigano" data-t="optSupport">Suporte ao Baralho Cigano</option>
+                <option value="Suporte - Compare" data-t="optSupportCompare">Suporte ao Compare</option>
                 <option value="Sugestão ou Feedback" data-t="optFeedback">Sugestão ou Feedback de Melhoria</option>
                 <option value="Privacidade / LGPD / GDPR" data-t="optPrivacy">Solicitação de Privacidade / Exclusão de Dados</option>
                 <option value="Outro Assunto" data-t="optOther">Outro Assunto</option>
@@ -837,12 +991,11 @@
         <!-- TRANSPARÊNCIA, POLÍTICAS E DESENVOLVEDOR -->
         <article class="panel" style="display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <span class="eyebrow" data-t="privacyEyebrow">Conformidade & Confiança</span>
+            <span class="eyebrow" data-t="privacyEyebrow">Conformidade &amp; Confiança</span>
             <h3 data-t="privacyTitle">Transparência em Seu Idioma</h3>
-            <p class="panel-subtitle" data-t="privacyText">Nosso compromisso é total com a clareza e conformidade legal (LGPD & GDPR). Saiba exatamente quais serviços de suporte e diagnóstico são usados.</p>
+            <p class="panel-subtitle" data-t="privacyText">Nosso compromisso é total com a clareza e conformidade legal (LGPD &amp; GDPR). Saiba exatamente quais serviços de suporte e diagnóstico são usados.</p>
 
             <div class="privacy-links">
-              <a class="privacy-link" href="compare-precos/" style="border-color:var(--success); color:var(--success); font-weight:600;">Compare (Página do App →)</a>
               <a class="privacy-link" href="compare/" style="border-color:var(--gold); color:var(--gold); font-weight:600;">Compare (Privacidade)</a>
               <a class="privacy-link" href="privacypolicy.html">Baralho Cigano (PT)</a>
               <a class="privacy-link" href="privacypolicy-en.html">English</a>
@@ -855,7 +1008,7 @@
             <div class="privacy-box">
               <h4 style="font-size:1.02rem; margin-bottom:8px;" data-t="dataDeletionTitle">Exclusão e Gestão de Dados</h4>
               <p style="color:var(--text-muted); font-size:0.86rem; line-height:1.55;" data-t="dataDeletionText">
-                Como os dados de tiragens ficam salvos localmente, você pode apagá-los a qualquer momento limpando os dados do aplicativo nas Configurações do Android ou solicitando auxílio via e-mail.
+                Como os dados dos aplicativos ficam salvos localmente no aparelho, você pode apagá-los a qualquer momento nas Configurações do Android ou solicitar auxílio via e-mail.
               </p>
             </div>
           </div>
@@ -892,35 +1045,45 @@
   <script>
     const copy = {
       pt: {
-        navApp: 'O Aplicativo',
+        navApp: 'Nossos Apps',
         navFeatures: 'Diferenciais',
         navContact: 'Contato & Suporte',
-        eyebrow: 'Aplicativos Android Independentes',
-        hero: 'Tecnologia feita com <em>intenção.</em>',
-        lead: 'Criamos experiências digitais cuidadosas, acolhedoras e intuitivas — combinando design sensível com engenharia limpa da primeira tela ao menor detalhe.',
-        play: 'Ver no Google Play',
+        eyebrow: 'Tecnologia feita com intenção.',
+        hero: 'Pequenos grandes apps para a <em>sua rotina.</em>',
+        lead: 'Criamos aplicativos Android independentes com design limpo, utilidade real e respeito à sua privacidade — da economia no supermercado à calma de um momento de reflexão.',
+        exploreApps: 'Conhecer Nossos Apps',
         contactButton: 'Falar com o Desenvolvedor',
-        appsEyebrow: 'Nosso Destaque',
-        appsTitle: 'Intuição & Sabedoria em Suas Mãos',
-        appsIntro: 'Uma experiência inspirada na rica tradição do Baralho Cigano (Lenormand), construída para oferecer reflexões claras em uma interface fluida e sem distrações.',
-        appDescription: 'Tiragens clássicas, carta do dia diária, galeria completa das 36 cartas e múltiplos temas visuais místicos em uma experiência multilíngue para autoconhecimento.',
-        badgeCards: '✦ 36 Cartas Lenormand',
-        badgeThemes: '✦ Temas Visuais & Versos',
-        badgePrivacy: '✦ Dados Salvos no Aparelho',
-        androidTag: '✦ Android Oficial',
-        install: 'Instalar App ↗',
+        tileBaralhoSub: 'Oráculo IA & 36 Cartas',
+        tileCompareSub: 'Preços & Notas NFC-e',
+        appsEyebrow: 'Nossos Aplicativos',
+        appsTitle: 'Feitos para Facilitar e Inspirar o Dia a Dia',
+        appsIntro: 'Dois aplicativos Android independentes com foco em experiência fluida, funcionamento offline e dados salvos no seu próprio aparelho.',
+        baralhoBadge: '★ 4,4 · 10.000+ downloads',
+        appDescription: 'Oráculo com IA (Amor, Negócios e Geral), Carta do Dia, significados detalhados das 36 cartas Lenormand e 8 baralhos temáticos em 7 idiomas.',
+        bBadge1: '✦ Oráculo com IA',
+        bBadge2: '✦ 36 Cartas Lenormand',
+        bBadge3: '✦ 8 Baralhos Temáticos',
+        bBadge4: '✦ Offline',
+        compareBadge: 'Grátis · 100% Local-First',
+        compareDescription: 'Escaneie o QR Code de notas fiscais (NFC-e), leia códigos de barras no supermercado, compare o ranking de preços da sua lista e acompanhe seu orçamento mensal.',
+        cBadge1: '✦ Leitor NFC-e / SEFAZ',
+        cBadge2: '✦ Ranking de Mercados',
+        cBadge3: '✦ Scanner EAN',
+        cBadge4: '✦ Offline',
+        learnMore: 'Conhecer o App →',
         feat1Title: 'Design Focado no Essencial',
-        feat1Desc: 'Interface pensada para transmitir calma e concentração, sem poluição visual ou telas desnecessárias.',
-        feat2Title: 'Privacidade Respeitada',
-        feat2Desc: 'Suas tiragens e histórico ficam armazenados no seu dispositivo. Sem login obrigatório e sem venda de dados.',
-        feat3Title: 'Nativo & Multilíngue',
-        feat3Desc: 'Construído em conformidade com as diretrizes do Android e traduzido para 5 idiomas com alta fidelidade cultural.',
+        feat1Desc: 'Interfaces pensadas para transmitir clareza e praticidade, sem poluição visual ou telas desnecessárias.',
+        feat2Title: 'Privacidade Local-First',
+        feat2Desc: 'Suas tiragens, notas fiscais e listas ficam armazenadas no seu dispositivo. Sem login obrigatório e sem venda de dados.',
+        feat3Title: 'Android Nativo & Leve',
+        feat3Desc: 'Construídos em conformidade com as diretrizes oficiais do Android para oferecer agilidade, economia de bateria e uso offline.',
         contactEyebrow: 'Suporte & Comunicação',
         contactTitle: 'Envie uma Mensagem',
-        contactSubtitle: 'Precisa de suporte com o Baralho Cigano, quer propor uma ideia ou falar sobre privacidade? Estamos à disposição.',
+        contactSubtitle: 'Precisa de suporte com o Baralho Cigano ou com o Compare, quer propor uma ideia ou falar sobre privacidade? Estamos à disposição.',
         labelName: 'Seu Nome',
         labelSubject: 'Assunto',
         optSupport: 'Suporte ao Baralho Cigano',
+        optSupportCompare: 'Suporte ao Compare',
         optFeedback: 'Sugestão ou Feedback de Melhoria',
         optPrivacy: 'Solicitação de Privacidade / Exclusão de Dados',
         optOther: 'Outro Assunto',
@@ -933,7 +1096,7 @@
         privacyTitle: 'Transparência em Seu Idioma',
         privacyText: 'Nosso compromisso é total com a clareza e conformidade legal (LGPD & GDPR). Saiba exatamente quais serviços de suporte e diagnóstico são usados.',
         dataDeletionTitle: 'Exclusão e Gestão de Dados',
-        dataDeletionText: 'Como os dados de tiragens ficam salvos localmente, você pode apagá-los a qualquer momento limpando os dados do aplicativo nas Configurações do Android ou solicitando auxílio via e-mail.',
+        dataDeletionText: 'Como os dados dos aplicativos ficam salvos localmente no aparelho, você pode apagá-los a qualquer momento nas Configurações do Android ou solicitar auxílio via e-mail.',
         devRole: 'Desenvolvedor Independente',
         devBio: 'Wanderley Neppel · Bento Gonçalves, RS - Brasil',
         rights: 'Todos os direitos reservados.',
@@ -941,35 +1104,45 @@
         playProfile: 'Perfil no Google Play ↗'
       },
       en: {
-        navApp: 'The App',
+        navApp: 'Our Apps',
         navFeatures: 'Highlights',
         navContact: 'Contact & Support',
-        eyebrow: 'Independent Android Apps',
-        hero: 'Technology made with <em>intention.</em>',
-        lead: 'We craft thoughtful, welcoming and intuitive digital experiences — combining graceful design with clean engineering from the first screen to the smallest detail.',
-        play: 'View on Google Play',
+        eyebrow: 'Technology made with intention.',
+        hero: 'Small mighty apps for <em>your daily life.</em>',
+        lead: 'We build independent Android apps with clean design, real utility, and respect for your privacy — from supermarket savings to calm moments of reflection.',
+        exploreApps: 'Explore Our Apps',
         contactButton: 'Get in Touch',
-        appsEyebrow: 'Our App',
-        appsTitle: 'Intuition in Your Hands',
-        appsIntro: 'An experience inspired by the symbolism of Gypsy / Lenormand cards, pleasant, accessible and distraction-free.',
-        appDescription: 'Classic spreads, daily card, full 36-card gallery and multiple mystical themes in a multilingual experience for personal reflection.',
-        badgeCards: '✦ 36 Lenormand Cards',
-        badgeThemes: '✦ Visual Themes & Card Backs',
-        badgePrivacy: '✦ Data Stored on Device',
-        androidTag: '✦ Official Android App',
-        install: 'Get the App ↗',
+        tileBaralhoSub: 'AI Oracle & 36 Cards',
+        tileCompareSub: 'Prices & Receipts',
+        appsEyebrow: 'Our Applications',
+        appsTitle: 'Built to Simplify and Inspire Your Day',
+        appsIntro: 'Two independent Android applications focused on smooth experience, offline reliability, and local-first device storage.',
+        baralhoBadge: '★ 4.4 · 10,000+ downloads',
+        appDescription: 'AI Oracle (Love, Business & General), Daily Card, detailed meanings of all 36 Lenormand cards, and 8 themed decks in 7 languages.',
+        bBadge1: '✦ AI Oracle',
+        bBadge2: '✦ 36 Lenormand Cards',
+        bBadge3: '✦ 8 Themed Decks',
+        bBadge4: '✦ Offline',
+        compareBadge: 'Free · 100% Local-First',
+        compareDescription: 'Scan electronic fiscal receipts (NFC-e QR Code), read barcodes in-store, rank supermarket prices for your list, and track your monthly budget.',
+        cBadge1: '✦ Receipt QR Scanner',
+        cBadge2: '✦ Store Price Ranking',
+        cBadge3: '✦ Barcode Scanner',
+        cBadge4: '✦ Offline',
+        learnMore: 'Explore App →',
         feat1Title: 'Essential-First Design',
-        feat1Desc: 'Interface crafted to provide peace and focus, without visual clutter or redundant screens.',
-        feat2Title: 'Privacy-Minded',
-        feat2Desc: 'Your readings and history stay on your local device. No compulsory login, no data selling.',
-        feat3Title: 'Native & Multilingual',
-        feat3Desc: 'Fully aligned with Android standards and localized across 5 languages with cultural care.',
+        feat1Desc: 'Interfaces crafted for clarity and practicality, free from visual clutter or unnecessary screens.',
+        feat2Title: 'Local-First Privacy',
+        feat2Desc: 'Your card readings, receipts, and shopping lists stay on your device. No compulsory login and no data selling.',
+        feat3Title: 'Native & Lightweight Android',
+        feat3Desc: 'Built following official Android guidelines to deliver fast performance, battery efficiency, and offline access.',
         contactEyebrow: 'Support & Communication',
         contactTitle: 'Send a Message',
-        contactSubtitle: 'Need assistance with Gypsy Cards, have an idea or a privacy inquiry? We are here to help.',
+        contactSubtitle: 'Need help with Lenormand Cards or Compare, have an idea, or a privacy inquiry? We are here to help.',
         labelName: 'Your Name',
         labelSubject: 'Subject',
         optSupport: 'Support for Gypsy Cards',
+        optSupportCompare: 'Support for Compare',
         optFeedback: 'Suggestion or Feedback',
         optPrivacy: 'Privacy / Data Deletion Request',
         optOther: 'Other Topic',
@@ -982,7 +1155,7 @@
         privacyTitle: 'Privacy in Your Language',
         privacyText: 'We prioritize clarity and compliance with privacy laws (GDPR & LGPD). Learn how data and diagnostics are handled.',
         dataDeletionTitle: 'Data Management & Deletion',
-        dataDeletionText: 'Because reading data is stored on-device, you can clear it anytime from Android Settings > Storage, or reach out for assistance.',
+        dataDeletionText: 'Because app data is stored locally on your device, you can clear it anytime in Android Settings > Storage or reach out via email.',
         devRole: 'Independent Developer',
         devBio: 'Wanderley Neppel · Bento Gonçalves, Brazil',
         rights: 'All rights reserved.',
@@ -990,35 +1163,45 @@
         playProfile: 'Google Play Profile ↗'
       },
       es: {
-        navApp: 'La Aplicación',
+        navApp: 'Nuestras Apps',
         navFeatures: 'Diferenciales',
         navContact: 'Contacto y Soporte',
-        eyebrow: 'Aplicaciones Android Independientes',
-        hero: 'Tecnología hecha con <em>intención.</em>',
-        lead: 'Creamos experiencias digitales cuidadas, acogedoras e intuitivas, uniendo diseño sensible e ingeniería limpia.',
-        play: 'Ver en Google Play',
+        eyebrow: 'Tecnología hecha con intención.',
+        hero: 'Pequeñas grandes apps para <em>tu rutina.</em>',
+        lead: 'Creamos aplicaciones Android independientes con diseño limpio, utilidad real y respeto a tu privacidad — desde el ahorro en el súper hasta momentos de reflexión.',
+        exploreApps: 'Conocer Nuestras Apps',
         contactButton: 'Contactar al Desarrollador',
-        appsEyebrow: 'Nuestra App',
-        appsTitle: 'Intuición en tus Manos',
-        appsIntro: 'Una experiencia inspirada en el simbolismo del Baralho Cigano (Lenormand), accesible y sin distracciones.',
-        appDescription: 'Tiradas tradicionales, carta del día, galería de 36 cartas y temas místicos en una experiencia multilingüe.',
-        badgeCards: '✦ 36 Cartas Lenormand',
-        badgeThemes: '✦ Temas Visuales y Reversos',
-        badgePrivacy: '✦ Datos Guardados en el Dispositivo',
-        androidTag: '✦ Android Oficial',
-        install: 'Instalar App ↗',
+        tileBaralhoSub: 'Oráculo IA y 36 Cartas',
+        tileCompareSub: 'Precios y Recibos',
+        appsEyebrow: 'Nuestras Aplicaciones',
+        appsTitle: 'Hechas para Facilitar e Inspirar tu Día',
+        appsIntro: 'Dos aplicaciones Android independientes enfocadas en experiencia fluida, uso sin conexión y datos guardados en tu propio dispositivo.',
+        baralhoBadge: '★ 4,4 · 10.000+ descargas',
+        appDescription: 'Oráculo con IA (Amor, Negocios y General), Carta del Día, significados de las 36 cartas Lenormand y 8 barajas temáticas en 7 idiomas.',
+        bBadge1: '✦ Oráculo con IA',
+        bBadge2: '✦ 36 Cartas Lenormand',
+        bBadge3: '✦ 8 Barajas Temáticas',
+        bBadge4: '✦ Offline',
+        compareBadge: 'Gratis · 100% Local-First',
+        compareDescription: 'Escanea códigos QR de tickets fiscales, lee códigos de barras en la tienda, compara el ranking de precios de tu lista y controla tu presupuesto mensual.',
+        cBadge1: '✦ Lector QR Fiscal',
+        cBadge2: '✦ Ranking de Tiendas',
+        cBadge3: '✦ Escáner EAN',
+        cBadge4: '✦ Offline',
+        learnMore: 'Ver la App →',
         feat1Title: 'Diseño Esencial',
-        feat1Desc: 'Interfaz diseñada para transmitir calma y enfoque, sin pantallas innecesarias.',
-        feat2Title: 'Privacidad Garantizada',
-        feat2Desc: 'Tus lecturas quedan almacenadas en tu propio dispositivo. Sin registros obligatorios.',
-        feat3Title: 'Nativo y Multilingüe',
-        feat3Desc: 'Construido siguiendo las directrices de Android y adaptado con cuidado a 5 idiomas.',
+        feat1Desc: 'Interfaces pensadas para ofrecer claridad y practicidad, sin pantallas innecesarias.',
+        feat2Title: 'Privacidad Local-First',
+        feat2Desc: 'Tus lecturas, tickets y listas quedan en tu propio dispositivo. Sin registros obligatorios.',
+        feat3Title: 'Nativo y Ligero',
+        feat3Desc: 'Construidos siguiendo las directrices de Android para mayor rapidez y funcionamiento sin conexión.',
         contactEyebrow: 'Soporte y Comunicación',
         contactTitle: 'Envíanos un Mensaje',
-        contactSubtitle: '¿Tienes dudas sobre la app, sugerencias o consultas de privacidad? Estamos a tu disposición.',
+        contactSubtitle: '¿Tienes dudas sobre Baralho Cigano o Compare, sugerencias o consultas de privacidad? Estamos a tu disposición.',
         labelName: 'Tu Nombre',
         labelSubject: 'Asunto',
         optSupport: 'Soporte para Baralho Cigano',
+        optSupportCompare: 'Soporte para Compare',
         optFeedback: 'Sugerencia o Comentarios',
         optPrivacy: 'Solicitud de Privacidad / Eliminación de Datos',
         optOther: 'Otro Asunto',
@@ -1031,7 +1214,7 @@
         privacyTitle: 'Privacidad en tu Idioma',
         privacyText: 'Compromiso total con la claridad y leyes de privacidad aplicables.',
         dataDeletionTitle: 'Eliminación y Gestión de Datos',
-        dataDeletionText: 'Puedes borrar los datos en Ajustes de Android > Almacenamiento o solicitando apoyo por correo.',
+        dataDeletionText: 'Puedes borrar los datos locales en Ajustes de Android > Almacenamiento o solicitando apoyo por correo.',
         devRole: 'Desarrollador Independiente',
         devBio: 'Wanderley Neppel · Bento Gonçalves, Brasil',
         rights: 'Todos los derechos reservados.',
@@ -1039,35 +1222,45 @@
         playProfile: 'Perfil en Google Play ↗'
       },
       fr: {
-        navApp: 'L’Application',
+        navApp: 'Nos Apps',
         navFeatures: 'Points forts',
         navContact: 'Contact & Support',
-        eyebrow: 'Applications Android Indépendantes',
-        hero: 'Une technologie créée avec <em>intention.</em>',
-        lead: 'Nous concevons des expériences douces, soignées et intuitives, du premier écran au moindre détail.',
-        play: 'Voir sur Google Play',
+        eyebrow: 'Une technologie créée avec intention.',
+        hero: 'De petites grandes apps pour <em>votre quotidien.</em>',
+        lead: 'Nous créons des applications Android indépendantes alliant design épuré, utilité concrète et respect de votre vie privée.',
+        exploreApps: 'Découvrir Nos Apps',
         contactButton: 'Contacter le Développeur',
-        appsEyebrow: 'Notre Application',
-        appsTitle: 'L’Intuition entre vos Mains',
-        appsIntro: 'Une expérience inspirée du symbolisme Lenormand, claire, accessible et apaisante.',
-        appDescription: 'Tirages, carte du jour, galerie complète et thèmes visuels dans une expérience multilingue.',
-        badgeCards: '✦ 36 Cartes Lenormand',
-        badgeThemes: '✦ Thèmes & Dos de Cartes',
-        badgePrivacy: '✦ Données Stockées en Local',
-        androidTag: '✦ Android Officiel',
-        install: 'Installer l’App ↗',
+        tileBaralhoSub: 'Oracle IA & 36 Cartes',
+        tileCompareSub: 'Prix & Tickets',
+        appsEyebrow: 'Nos Applications',
+        appsTitle: 'Conçues pour Simplifier et Inspirer',
+        appsIntro: 'Deux applications Android indépendantes pensées pour la fluidité, l’usage hors ligne et le stockage local.',
+        baralhoBadge: '★ 4,4 · 10 000+ téléchargements',
+        appDescription: 'Oracle IA (Amour, Affaires, Général), Carte du Jour, significations des 36 cartes Lenormand et 8 jeux thématiques en 7 langues.',
+        bBadge1: '✦ Oracle IA',
+        bBadge2: '✦ 36 Cartes Lenormand',
+        bBadge3: '✦ 8 Jeux Thématiques',
+        bBadge4: '✦ Hors ligne',
+        compareBadge: 'Gratuit · 100% Local-First',
+        compareDescription: 'Scannez le QR Code de vos tickets de caisse, lisez les codes-barres en magasin, comparez les prix de votre liste et suivez votre budget.',
+        cBadge1: '✦ Scanner QR Tickets',
+        cBadge2: '✦ Classement Magasins',
+        cBadge3: '✦ Scanner EAN',
+        cBadge4: '✦ Hors ligne',
+        learnMore: 'Découvrir l’App →',
         feat1Title: 'Design Épuré',
-        feat1Desc: 'Interface pensée pour apporter sérénité et concentration sans surcharge visuelle.',
-        feat2Title: 'Respect de la Vie Privée',
-        feat2Desc: 'Vos tirages restent sur votre appareil. Pas d’inscription obligatoire, pas de revente de données.',
-        feat3Title: 'Natif & Multilingue',
-        feat3Desc: 'Optimisé selon les standards Android et disponible en 5 langues.',
+        feat1Desc: 'Interfaces pensées pour apporter clarté et simplicité sans surcharge visuelle.',
+        feat2Title: 'Vie Privée Locale',
+        feat2Desc: 'Vos tirages, tickets et listes restent sur votre appareil. Pas d’inscription obligatoire, aucune revente de données.',
+        feat3Title: 'Android Natif & Léger',
+        feat3Desc: 'Optimisés selon les standards Android pour la réactivité et l’utilisation hors ligne.',
         contactEyebrow: 'Support & Échange',
         contactTitle: 'Envoyez un Message',
-        contactSubtitle: 'Une question sur l’application, une suggestion ou une demande relative à vos données ?',
+        contactSubtitle: 'Une question sur Lenormand ou Compare, une suggestion ou une demande relative à vos données ?',
         labelName: 'Votre Nom',
         labelSubject: 'Objet',
         optSupport: 'Support Lenormand',
+        optSupportCompare: 'Support Compare',
         optFeedback: 'Suggestion ou Avis',
         optPrivacy: 'Confidentialité / Suppression de données',
         optOther: 'Autre sujet',
@@ -1080,7 +1273,7 @@
         privacyTitle: 'Confidentialité dans votre Langue',
         privacyText: 'Découvrez en toute transparence comment nous respectons votre vie privée (RGPD).',
         dataDeletionTitle: 'Suppression et Gestion',
-        dataDeletionText: 'Vos tirages sont conservés sur votre appareil. Vous pouvez les effacer via les Paramètres Android.',
+        dataDeletionText: 'Vos données sont conservées en local sur votre appareil. Vous pouvez les effacer via les Paramètres Android.',
         devRole: 'Développeur Indépendant',
         devBio: 'Wanderley Neppel · Bento Gonçalves, Brésil',
         rights: 'Tous droits réservés.',
@@ -1088,35 +1281,45 @@
         playProfile: 'Profil Google Play ↗'
       },
       it: {
-        navApp: 'L’Applicazione',
+        navApp: 'Le Nostre App',
         navFeatures: 'Caratteristiche',
         navContact: 'Contatti & Supporto',
-        eyebrow: 'App Android Indipendenti',
-        hero: 'Tecnologia creata con <em>intenzione.</em>',
-        lead: 'Creiamo esperienze semplici, accoglienti e curate, unendo design sensibile ed eleganza tecnica.',
-        play: 'Vedi su Google Play',
+        eyebrow: 'Tecnologia creata con intenzione.',
+        hero: 'Piccole grandi app per la <em>tua routine.</em>',
+        lead: 'Creiamo app Android indipendenti con design pulito, utilità reale e rispetto per la tua privacy — dal risparmio al supermercato ai momenti di riflessione.',
+        exploreApps: 'Scopri le App',
         contactButton: 'Contatta lo Sviluppatore',
-        appsEyebrow: 'La Nostra App',
-        appsTitle: 'L’Intuizione nelle tue Mani',
-        appsIntro: 'Un’esperienza ispirata al simbolismo del Baralho Cigano (Lenormand), fluida e accessibile.',
-        appDescription: 'Letture, carta del giorno, galleria delle 36 carte e temi mistici in un’esperienza multilingue.',
-        badgeCards: '✦ 36 Carte Lenormand',
-        badgeThemes: '✦ Temi Visivi e Dorsi',
-        badgePrivacy: '✦ Dati Salvati sul Dispositivo',
-        androidTag: '✦ Android Ufficiale',
-        install: 'Installa l’App ↗',
+        tileBaralhoSub: 'Oracolo IA & 36 Carte',
+        tileCompareSub: 'Prezzi & Scontrini',
+        appsEyebrow: 'Le Nostre Applicazioni',
+        appsTitle: 'Progettate per Semplificare e Ispirare',
+        appsIntro: 'Due applicazioni Android indipendenti focalizzate su fluidità, uso offline e dati salvati localmente sul dispositivo.',
+        baralhoBadge: '★ 4,4 · 10.000+ download',
+        appDescription: 'Oracolo IA (Amore, Affari e Generale), Carta del Giorno, significati delle 36 carte Lenormand e 8 mazzi tematici in 7 lingue.',
+        bBadge1: '✦ Oracolo IA',
+        bBadge2: '✦ 36 Carte Lenormand',
+        bBadge3: '✦ 8 Mazzi Tematici',
+        bBadge4: '✦ Offline',
+        compareBadge: 'Gratis · 100% Local-First',
+        compareDescription: 'Scansiona il QR Code degli scontrini fiscali, leggi i codici a barre in negozio, confronta i prezzi dei supermercati e gestisci il budget mensile.',
+        cBadge1: '✦ Lettore QR Scontrini',
+        cBadge2: '✦ Classifica Negozi',
+        cBadge3: '✦ Scanner EAN',
+        cBadge4: '✦ Offline',
+        learnMore: 'Scopri l’App →',
         feat1Title: 'Design Essenziale',
-        feat1Desc: 'Interfaccia studiata per infondere calma e concentrazione, senza distrazioni.',
-        feat2Title: 'Privacy Rispettata',
-        feat2Desc: 'Le tue letture restano memorizzate sul tuo dispositivo personale.',
-        feat3Title: 'Nativo & Multilingue',
-        feat3Desc: 'Realizzato secondo le linee guida Android e tradotto con cura in 5 lingue.',
+        feat1Desc: 'Interfacce studiate per offrire chiarezza e praticità, senza distrazioni.',
+        feat2Title: 'Privacy Local-First',
+        feat2Desc: 'Le tue letture, scontrini e liste restano memorizzati sul tuo dispositivo personale.',
+        feat3Title: 'Nativo & Leggero',
+        feat3Desc: 'Realizzati secondo le linee guida Android per garantire velocità e funzionamento offline.',
         contactEyebrow: 'Supporto & Contatto',
         contactTitle: 'Invia un Messaggio',
-        contactSubtitle: 'Hai domande sull’app, suggerimenti o richieste di privacy? Siamo a disposizione.',
+        contactSubtitle: 'Hai domande su Baralho Cigano o Compare, suggerimenti o richieste di privacy? Siamo a disposizione.',
         labelName: 'Il tuo Nome',
         labelSubject: 'Oggetto',
         optSupport: 'Supporto Baralho Cigano',
+        optSupportCompare: 'Supporto Compare',
         optFeedback: 'Suggerimento o Feedback',
         optPrivacy: 'Richiesta di Privacy / Cancellazione Dati',
         optOther: 'Altro Argomento',
@@ -1129,7 +1332,7 @@
         privacyTitle: 'Privacy nella tua Lingua',
         privacyText: 'Chiarezza e rispetto totale delle normative sulla privacy (GDPR).',
         dataDeletionTitle: 'Gestione e Cancellazione Dati',
-        dataDeletionText: 'Puoi cancellare i dati in qualsiasi momento dalle Impostazioni di Android > Archiviazione.',
+        dataDeletionText: 'Puoi cancellare i dati locali in qualsiasi momento dalle Impostazioni di Android > Archiviazione.',
         devRole: 'Sviluppatore Indipendente',
         devBio: 'Wanderley Neppel · Bento Gonçalves, Brasile',
         rights: 'Tutti i diritti riservati.',
@@ -1137,35 +1340,45 @@
         playProfile: 'Profilo Google Play ↗'
       },
       de: {
-        navApp: 'Die App',
+        navApp: 'Unsere Apps',
         navFeatures: 'Vorteile',
         navContact: 'Kontakt & Support',
-        eyebrow: 'Unabhängige Android-Apps',
-        hero: 'Technologie mit <em>Absicht.</em>',
-        lead: 'Wir schaffen einfache, einladende und durchdachte Erlebnisse – sensible Gestaltung kombiniert mit klarer technischer Qualität.',
-        play: 'Auf Google Play ansehen',
+        eyebrow: 'Technologie mit Absicht.',
+        hero: 'Kleine große Apps für <em>deinen Alltag.</em>',
+        lead: 'Wir entwickeln unabhängige Android-Apps mit klarem Design, echtem Nutzen und voller Achtung deiner Privatsphäre.',
+        exploreApps: 'Unsere Apps entdecken',
         contactButton: 'Entwickler kontaktieren',
-        appsEyebrow: 'Unser Highlight',
-        appsTitle: 'Intuition in deinen Händen',
-        appsIntro: 'Ein Erlebnis, inspiriert von der Lenormand-Symbolik, geschaffen für klare Reflexionen in einer ruhigen Benutzeroberfläche.',
-        appDescription: 'Legungen, Tageskarte, Galerie der 36 Karten und mystische Designs in einem mehrsprachigen Erlebnis.',
-        badgeCards: '✦ 36 Lenormandkarten',
-        badgeThemes: '✦ Visuelle Designs & Rückseiten',
-        badgePrivacy: '✦ Daten auf dem Gerät gespeichert',
-        androidTag: '✦ Offiziell für Android',
-        install: 'App installieren ↗',
+        tileBaralhoSub: 'KI-Orakel & 36 Karten',
+        tileCompareSub: 'Preise & Kassenbons',
+        appsEyebrow: 'Unsere Anwendungen',
+        appsTitle: 'Gemacht für Klarheit im Alltag',
+        appsIntro: 'Zwei unabhängige Android-Apps mit Fokus auf flüssige Bedienung, Offline-Nutzung und lokale Datenspeicherung.',
+        baralhoBadge: '★ 4,4 · 10.000+ Downloads',
+        appDescription: 'KI-Orakel (Liebe, Beruf & Allgemein), Tageskarte, Bedeutungen aller 36 Lenormandkarten und 8 Themen-Decks in 7 Sprachen.',
+        bBadge1: '✦ KI-Orakel',
+        bBadge2: '✦ 36 Lenormandkarten',
+        bBadge3: '✦ 8 Themen-Decks',
+        bBadge4: '✦ Offline',
+        compareBadge: 'Kostenlos · 100% Local-First',
+        compareDescription: 'Kassenbons per QR-Code scannen, Barcodes im Supermarkt prüfen, Einkaufslisten preislich vergleichen und Monatsbudget im Blick behalten.',
+        cBadge1: '✦ Beleg-QR-Scanner',
+        cBadge2: '✦ Markt-Ranking',
+        cBadge3: '✦ Barcode-Scanner',
+        cBadge4: '✦ Offline',
+        learnMore: 'App entdecken →',
         feat1Title: 'Klares Design',
-        feat1Desc: 'Sorgfältig gestaltete Oberfläche für Ruhe und Fokus ohne Ablenkungen.',
-        feat2Title: 'Geschützte Privatsphäre',
-        feat2Desc: 'Deine Legungen bleiben lokal auf deinem Smartphone gespeichert.',
-        feat3Title: 'Nativ & Mehrsprachig',
-        feat3Desc: 'Nach modernen Android-Standards entwickelt und sorgfältig lokalisiert.',
+        feat1Desc: 'Sorgfältig gestaltete Oberflächen für Übersichtlichkeit ohne Ablenkungen.',
+        feat2Title: 'Lokale Privatsphäre',
+        feat2Desc: 'Deine Legungen, Belege und Listen bleiben lokal auf deinem Smartphone gespeichert.',
+        feat3Title: 'Nativ & Leicht',
+        feat3Desc: 'Nach modernen Android-Standards entwickelt für Schnelligkeit und Offline-Verfügbarkeit.',
         contactEyebrow: 'Support & Kontakt',
         contactTitle: 'Nachricht senden',
-        contactSubtitle: 'Fragen zur App, Feedback oder Datenschutzanfragen? Schreib uns gerne.',
+        contactSubtitle: 'Fragen zu Lenormand oder Compare, Feedback oder Datenschutzanfragen? Schreib uns gerne.',
         labelName: 'Dein Name',
         labelSubject: 'Betreff',
         optSupport: 'Lenormand Support',
+        optSupportCompare: 'Compare Support',
         optFeedback: 'Vorschlag oder Feedback',
         optPrivacy: 'Datenschutz / Datenlöschung',
         optOther: 'Anderes Anliegen',
@@ -1192,9 +1405,9 @@
     function setLanguage(lang) {
       currentLang = copy[lang] ? lang : 'pt';
       const c = copy[currentLang];
-      
+
       document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
-      
+
       document.querySelectorAll('[data-t]').forEach(el => {
         const key = el.dataset.t;
         if (c[key]) el.textContent = c[key];
@@ -1220,13 +1433,13 @@
       const name = document.getElementById('nameInput').value.trim();
       const subject = document.getElementById('subjectInput').value;
       const message = document.getElementById('messageInput').value.trim();
-      
+
       const emailBody = `Olá Wanderley (iLikedit),%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0AAtenciosamente,%0D%0A${encodeURIComponent(name)}`;
       const mailtoUrl = `mailto:contato.ilikedit@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
-      
+
       const statusBox = document.getElementById('formStatus');
-      statusBox.textContent = currentLang === 'en' 
-        ? 'Opening your email client to send message...' 
+      statusBox.textContent = currentLang === 'en'
+        ? 'Opening your email client to send message...'
         : 'Abrindo seu aplicativo de e-mail para envio...';
       statusBox.className = 'form-feedback success';
 
