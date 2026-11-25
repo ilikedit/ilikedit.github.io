@@ -777,6 +777,14 @@
       *, ::before, ::after { animation: none !important; transition: none !important; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBT5TWD5KE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WBT5TWD5KE');
+  </script>
 </head>
 <body>
 
@@ -1495,6 +1503,18 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(el => {
+      el.addEventListener('click', () => {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'play_store_click', {
+            app_name: el.href.includes('compare') ? 'compare' : 'baralho_cigano',
+            page_lang: currentLang,
+            link_url: el.href
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>

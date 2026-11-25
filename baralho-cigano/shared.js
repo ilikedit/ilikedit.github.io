@@ -104,4 +104,17 @@
   deckButtons.forEach((btn) => {
     btn.addEventListener("click", () => selectDeck(btn.dataset.deck));
   });
+
+  // GA4 Play Store CTA click tracking
+  document.querySelectorAll(".play-cta").forEach((el) => {
+    el.addEventListener("click", () => {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "play_store_click", {
+          app_name: "baralho_cigano",
+          page_lang: document.documentElement.lang || "pt-BR",
+          link_url: el.href
+        });
+      }
+    });
+  });
 })();

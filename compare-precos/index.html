@@ -766,6 +766,14 @@
       }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBT5TWD5KE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WBT5TWD5KE');
+  </script>
 </head>
 <body>
 
@@ -1194,6 +1202,20 @@
 
       slider.addEventListener("input", update);
       update();
+    })();
+
+    (function initAnalytics() {
+      document.querySelectorAll(".play-cta").forEach((el) => {
+        el.addEventListener("click", () => {
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "play_store_click", {
+              app_name: "compare",
+              page_lang: "pt-BR",
+              link_url: el.href
+            });
+          }
+        });
+      });
     })();
   </script>
 </body>
