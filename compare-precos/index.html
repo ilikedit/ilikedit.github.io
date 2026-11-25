@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a8754">
+  <title>Compare Preços e Notas Fiscais — App Grátis de Economia no Supermercado | Android</title>
+  <meta name="description" content="Baixe o app Compare Preços e Notas Fiscais grátis para Android: compare preços de supermercado, escaneie nota fiscal NFC-e via QR Code, crie lista de compras inteligente, leia código de barras e controle seu orçamento offline.">
+  <link rel="canonical" href="https://ilikedit.com.br/compare-precos/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="iLikedit">
+  <meta property="og:title" content="Compare Preços e Notas Fiscais — Economia Inteligente no Supermercado">
+  <meta property="og:description" content="Escaneie notas fiscais NFC-e por QR Code, compare preços entre mercados e organize sua lista de compras e finanças direto no celular. Grátis e Local-First.">
+  <meta property="og:image" content="https://ilikedit.com.br/compare-precos/assets/hero-banner.webp">
+  <meta property="og:url" content="https://ilikedit.com.br/compare-precos/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare Preços e Notas Fiscais — App Android Grátis">
+  <meta name="twitter:description" content="Compare preços de supermercado pelo histórico real das suas notas fiscais NFC-e e economize todo mês.">
+  <meta name="twitter:image" content="https://ilikedit.com.br/compare-precos/assets/hero-banner.webp">
+
+  <link rel="icon" href="assets/icon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data: MobileApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Compare Preços e Notas Fiscais",
+    "operatingSystem": "Android 8.0+",
+    "applicationCategory": "ShoppingApplication",
+    "inLanguage": "pt-BR",
+    "description": "Aplicativo Android gratuito e Local-First para comparar preços de supermercados, escanear cupons e notas fiscais NFC-e via QR Code SEFAZ, ler códigos de barras EAN, montar listas de compras inteligentes e acompanhar seu orçamento mensal.",
+    "url": "https://ilikedit.com.br/compare-precos/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos",
+    "image": "https://ilikedit.com.br/compare-precos/assets/icon.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "iLikedit",
+      "url": "https://ilikedit.com.br/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O aplicativo Compare Preços e Notas Fiscais é gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! O download e os recursos principais — leitor de QR Code de notas fiscais NFC-e, histórico real de preços por supermercado, leitor de código de barras, lista de compras inteligente e controle financeiro — são gratuitos no Android."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o leitor de nota fiscal NFC-e e SEFAZ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basta apontar a câmera para o QR Code do cupom fiscal do supermercado ou importar pela chave de acesso ou arquivo CSV. O Compare lê os itens, quantidades e valores automaticamente nos portais da SEFAZ e monta seu histórico real de preços por loja."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O app funciona sem internet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim! O Compare foi criado com arquitetura Local-First: suas listas de compras, catálogo de produtos, comparação de mercados e finanças funcionam normalmente offline no supermercado. A internet é usada apenas ao consultar uma nova nota fiscal na SEFAZ ou utilizar reconhecimento por IA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso criar conta ou meus dados de compras são vendidos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não há cadastro nem login obrigatório. Suas notas fiscais, listas de compras e orçamento ficam salvos no armazenamento local do seu próprio celular e nunca são comercializados."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais versões do Android são compatíveis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Compare Preços e Notas Fiscais é compatível com celulares Android 8.0 ou superior."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4fbf7;
+      --bg-alt: #eaf6ef;
+      --surface: #ffffff;
+      --surface-soft: #f8fcfa;
+      --text: #122026;
+      --text-muted: #4b5d66;
+      --primary: #0a8754;
+      --primary-hover: #059669;
+      --primary-soft: rgba(10, 135, 84, 0.1);
+      --accent: #6d4aff;
+      --accent-soft: rgba(109, 74, 255, 0.1);
+      --border: rgba(18, 32, 38, 0.1);
+      --border-strong: rgba(10, 135, 84, 0.28);
+      --shadow-sm: 0 8px 24px rgba(15, 45, 34, 0.06);
+      --shadow-md: 0 20px 48px rgba(15, 45, 34, 0.1);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      color: var(--text);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(10, 135, 84, 0.09), transparent 440px),
+        radial-gradient(circle at 88% 18%, rgba(109, 74, 255, 0.07), transparent 460px);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(1140px, calc(100% - 36px)); margin-inline: auto; }
+
+    h1, h2, h3, h4 {
+      font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    /* TOPBAR */
+    .topbar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 251, 247, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(10, 135, 84, 0.22);
+      flex-shrink: 0;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.94rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-sm {
+      min-height: 38px;
+      padding: 0 16px;
+      font-size: 0.85rem;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(10, 135, 84, 0.24);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(10, 135, 84, 0.34);
+      filter: brightness(1.04);
+    }
+    .btn-outline {
+      background: var(--surface);
+      border-color: var(--border-strong);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 54px 0 46px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .hero h1 {
+      font-size: clamp(2.05rem, 4vw, 3.2rem);
+      line-height: 1.12;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 54ch;
+      margin-bottom: 24px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .hero-meta span::before {
+      content: "✓ ";
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .hero-banner-frame {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      box-shadow: var(--shadow-md);
+    }
+    .hero-banner-frame img {
+      width: 100%;
+      aspect-ratio: 1024 / 500;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+
+    /* SECTIONS */
+    section.section-pad { padding: 60px 0; }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 38px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .section-header p { color: var(--text-muted); }
+
+    /* HOW IT WORKS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+    }
+
+    /* FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .feat-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .feat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+    }
+    .feat-icon.is-purple {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .feat-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+    .feat-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    /* INTERACTIVE SCREENSHOTS SHOWCASE */
+    .screens-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .phone-frame {
+      width: 270px;
+      margin-inline: auto;
+      background: #141c22;
+      border-radius: 28px;
+      padding: 10px;
+      box-shadow: 0 22px 48px rgba(18, 32, 38, 0.22);
+      border: 2px solid rgba(18, 32, 38, 0.14);
+    }
+    .phone-frame img {
+      width: 100%;
+      aspect-ratio: 640 / 1422;
+      object-fit: contain;
+      border-radius: 20px;
+      background: #ffffff;
+      transition: opacity 0.2s ease;
+    }
+    .phone-frame img.is-switching { opacity: 0.4; }
+
+    .screen-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .screen-tab {
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .screen-tab:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .screen-tab.is-active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(10, 135, 84, 0.22);
+    }
+    .screen-details h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+    .screen-details p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      max-width: 54ch;
+    }
+    .screen-bullets {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .screen-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.94rem;
+      color: var(--text);
+    }
+    .screen-bullets li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* SAVINGS SIMULATOR */
+    .sim-box {
+      background: linear-gradient(135deg, #ffffff 0%, #ecf9f1 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 34px;
+    }
+    .sim-controls label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .sim-spend-val {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+    .sim-range {
+      width: 100%;
+      accent-color: var(--primary);
+      height: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .sim-scale {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .sim-result {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .sim-result small {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .sim-year {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .sim-month {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item[open] { border-color: var(--border-strong); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.35rem;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #0d3b2a 0%, #0a6d45 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 24px 56px rgba(10, 109, 69, 0.25);
+    }
+    .final-cta .eyebrow { color: #9df0c4; }
+    .final-cta h2 {
+      color: #ffffff;
+      font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+      margin-bottom: 12px;
+    }
+    .final-cta p {
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 56ch;
+      margin: 0 auto 24px;
+    }
+    .final-cta .btn-primary {
+      background: #ffffff;
+      color: #0a6d45;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 40px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .mobile-sticky { display: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 36px 0 28px;
+        gap: 28px;
+      }
+      .lead { margin-inline: auto; }
+      .hero-actions, .hero-meta { justify-content: center; }
+      .steps-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .screens-panel {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 26px;
+      }
+      .sim-box {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .pill { font-size: 0.76rem; padding: 6px 12px; }
+      .steps-grid, .features-grid { grid-template-columns: 1fr; }
+      .phone-frame { width: 235px; }
+      .screen-tabs { justify-content: center; }
+      .screen-details { text-align: center; }
+      .screen-details p { margin-inline: auto; }
+      .screen-bullets { text-align: left; }
+      .sim-box { padding: 24px 20px; }
+      footer { padding-bottom: 92px; }
+      .mobile-sticky {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 60;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 14px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--border-strong);
+        box-shadow: 0 14px 36px rgba(18, 32, 38, 0.18);
+        backdrop-filter: blur(12px);
+      }
+      .mobile-sticky-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+      .mobile-sticky-brand img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        flex-shrink: 0;
+      }
+      .mobile-sticky-brand div {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+      }
+      .mobile-sticky-brand strong {
+        font-size: 0.9rem;
+        color: var(--text);
+      }
+      .mobile-sticky-brand span {
+        font-size: 0.74rem;
+        color: var(--text-muted);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar-wrap">
+    <header class="shell topbar">
+      <a class="brand" href="#topo" aria-label="Compare Preços - Início">
+        <img class="brand-icon" src="assets/icon.webp" alt="Ícone do aplicativo Compare Preços e Notas Fiscais">
+        <div class="brand-text">
+          <span class="brand-title">Compare</span>
+          <span class="brand-sub">por iLikedit · Android</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação da página">
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#telas">Telas do App</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm play-cta"
+         href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+         target="_blank" rel="noopener">
+        Baixar Grátis
+      </a>
+    </header>
+  </div>
+
+  <main id="topo">
+    <!-- HERO -->
+    <section class="shell hero">
+      <div>
+        <span class="pill">Grátis para Android · Sem cadastro obrigatório · 100% Local-First</span>
+
+        <h1><em>Compare Preços</em> de Supermercado e Escaneie Notas Fiscais no Celular.</h1>
+
+        <p class="lead">
+          Escaneie o QR Code da sua nota fiscal (NFC-e), leia códigos de barras no corredor do mercado, descubra onde sua lista de compras sai mais barata e controle o orçamento mensal sem planilhas.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary play-cta"
+             href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+             target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a1.76 1.76 0 0 1-.41-1.132V2.946c0-.43.153-.832.41-1.132zm11.24 11.243l2.637 2.638-11.087 6.322 8.45-8.96zm3.884-1.856l3.012 1.718c.81.462.81 1.7 0 2.162l-3.012 1.718-2.852-2.852 2.852-2.746zM6.4 1.983l11.087 6.322-2.637 2.638-8.45-8.96z"/></svg>
+            <span>Baixar no Google Play</span>
+          </a>
+
+          <a class="btn btn-outline" href="#telas">
+            Ver Telas do App ↓
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Leitor NFC-e / SEFAZ</span>
+          <span>Funciona offline no mercado</span>
+          <span>Dados salvos no seu celular</span>
+        </div>
+      </div>
+
+      <div class="hero-banner-frame">
+        <img src="assets/hero-banner.webp" alt="Compare — Economia Inteligente no Supermercado: Comparador de Preços, Scanner NFC-e e Histórico Real">
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="shell section-pad" id="como-funciona">
+      <div class="section-header">
+        <span class="eyebrow">Simples no dia a dia</span>
+        <h2>Economia Baseada nos Seus Preços Reais em 3 Passos</h2>
+        <p>Sem depender de preços desatualizados da internet: o Compare aprende automaticamente com os cupons fiscais que você realmente paga.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-num">1</div>
+          <h3>Escaneie a Nota Fiscal ou Código de Barras</h3>
+          <p>Aponte a câmera para o QR Code da NFC-e (ou importe chave/CSV da SEFAZ). O app registra loja, produtos, pesos e valores em segundos.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num">2</div>
+          <h3>Monte sua Lista de Compras</h3>
+          <p>Adicione itens digitando ou bipando o código de barras. Veja a previsão do valor total antes mesmo de sair de casa e acompanhe o carrinho ao vivo.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-num">3</div>
+          <h3>Veja o Ranking de Supermercados</h3>
+          <p>Com um toque, descubra qual mercado da sua região tem o menor preço total para a sua lista e quanto você economiza em relação à concorrência.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="shell section-pad" id="recursos">
+      <div class="section-header">
+        <span class="eyebrow">Tudo para suas compras</span>
+        <h2>Recursos Feitos para Pagar Menos Todo Mês</h2>
+        <p>Do corredor do supermercado ao fechamento do orçamento doméstico, com rapidez e privacidade total.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feat-card">
+          <div class="feat-icon">🧾</div>
+          <h3>Leitor de Nota Fiscal NFC-e &amp; Contas</h3>
+          <p>Leia QR Codes da SEFAZ (NFC-e e NF-e/DANFE), importe CSV e escaneie contas de água, energia ou boletos direto para o seu orçamento.</p>
+        </article>
+
+        <article class="feat-card">
+          <div class="feat-icon">🏆</div>
+          <h3>Ranking de Supermercados</h3>
+          <p>Compare sua lista inteira entre mercados avaliados dentro do raio que você escolher e veja a economia exata em reais.</p>
+        </article>
+
+        <article class="feat-card">
+          <div class="feat-icon">📷</div>
+          <h3>Scanner de Código de Barras</h3>
+          <p>Bipe códigos EAN-13, EAN-8 e etiquetas de balança no corredor para conferir se o preço da prateleira está mais caro que da última compra.</p>
+        </article>
+
+        <article class="feat-card">
+          <div class="feat-icon">🛒</div>
+          <h3>Lista de Compras Inteligente</h3>
+          <p>Previsão de gasto total, cálculo automático no carrinho conforme você marca os itens e busca instantânea pelo histórico de notas.</p>
+        </article>
+
+        <article class="feat-card">
+          <div class="feat-icon is-purple">📊</div>
+          <h3>Finanças &amp; Orçamento Mensal</h3>
+          <p>Acompanhe receitas, despesas e compras de mercado por mês ou ano em gráficos claros, sem precisar digitar nota por nota manualmente.</p>
+        </article>
+
+        <article class="feat-card">
+          <div class="feat-icon">🔒</div>
+          <h3>Privacidade Local-First &amp; Offline</h3>
+          <p>Funciona mesmo sem sinal dentro do supermercado. Suas listas, notas e finanças ficam armazenadas localmente no seu aparelho.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TELAS REAIS DO APP -->
+    <section class="shell section-pad" id="telas">
+      <div class="section-header">
+        <span class="eyebrow">Veja por dentro</span>
+        <h2>Conheça as Telas Reais do Aplicativo Compare</h2>
+        <p>Alterne entre as abas abaixo para explorar o comparador de mercados, lista inteligente, pesquisa com código de barras, finanças e temas.</p>
+      </div>
+
+      <div class="screens-panel">
+        <div class="phone-frame">
+          <img id="screenPreviewImg" src="assets/screen-comparar.webp" alt="Tela Ranking de Mercados no app Compare">
+        </div>
+
+        <div class="screen-details">
+          <div class="screen-tabs" role="tablist" aria-label="Telas do aplicativo Compare">
+            <button type="button" class="screen-tab is-active" data-screen="comparar" role="tab" aria-selected="true">Ranking de Mercados</button>
+            <button type="button" class="screen-tab" data-screen="lista" role="tab" aria-selected="false">Lista de Compras</button>
+            <button type="button" class="screen-tab" data-screen="pesquisar" role="tab" aria-selected="false">Pesquisar &amp; EAN</button>
+            <button type="button" class="screen-tab" data-screen="financas" role="tab" aria-selected="false">Finanças &amp; Orçamento</button>
+            <button type="button" class="screen-tab" data-screen="temas" role="tab" aria-selected="false">7 Temas Visuais</button>
+          </div>
+
+          <h3 id="screenTitle">Ranking de Mercados em Tempo Real</h3>
+          <p id="screenDesc">Descubra imediatamente em qual supermercado a sua lista sai mais barata, comparando preços reais pagos nas suas últimas notas fiscais e filtrando pelo raio de distância.</p>
+
+          <ul class="screen-bullets" id="screenBullets">
+            <li>Ranking automático mostrando quanto você economiza em reais</li>
+            <li>Filtro por raio de distância (GPS) e cobertura dos itens da lista</li>
+            <li>Detalhamento de preço item por item antes de escolher a loja</li>
+          </ul>
+
+          <a class="btn btn-primary play-cta"
+             href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+             target="_blank" rel="noopener">
+            Testar Grátis no Android ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR DE ECONOMIA -->
+    <section class="shell section-pad" id="simulador">
+      <div class="sim-box">
+        <div class="sim-controls">
+          <span class="eyebrow">Simule sua economia</span>
+          <h2 style="font-size: clamp(1.5rem, 2.8vw, 2rem); margin-bottom: 10px;">Quanto Você Pode Economizar por Ano?</h2>
+          <p style="color: var(--text-muted); margin-bottom: 22px;">
+            Diferenças de preço entre supermercados costumam variar de 10% a 20% na mesma cesta básica. Ajuste quanto sua casa gasta por mês no mercado:
+          </p>
+
+          <label for="spendSlider">
+            <span>Gasto mensal no supermercado:</span>
+            <span class="sim-spend-val" id="spendValueLabel">R$ 1.200</span>
+          </label>
+          <input type="range" id="spendSlider" class="sim-range" min="400" max="4000" step="50" value="1200">
+          <div class="sim-scale">
+            <span>R$ 400/mês</span>
+            <span>R$ 2.200/mês</span>
+            <span>R$ 4.000/mês</span>
+          </div>
+        </div>
+
+        <div class="sim-result">
+          <small>Economia estimada (base 12%)</small>
+          <div class="sim-year" id="annualSavingsLabel">R$ 1.728 / ano</div>
+          <div class="sim-month" id="monthlySavingsLabel">~ R$ 144 economizados todo mês</div>
+          <a class="btn btn-primary play-cta" style="width:100%;"
+             href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+             target="_blank" rel="noopener">
+            Começar a Economizar Grátis ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="shell section-pad" id="duvidas">
+      <div class="section-header">
+        <span class="eyebrow">Perguntas Frequentes</span>
+        <h2>Dúvidas Sobre o Compare Preços e Notas Fiscais</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>O aplicativo Compare Preços e Notas Fiscais é gratuito?</summary>
+          <div class="faq-answer">
+            Sim! O download e os recursos principais — leitor de QR Code de notas fiscais NFC-e, histórico real de preços por supermercado, leitor de código de barras, lista de compras inteligente e controle financeiro — são gratuitos no Android.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Como funciona o leitor de nota fiscal NFC-e e SEFAZ?</summary>
+          <div class="faq-answer">
+            Basta apontar a câmera para o QR Code do cupom fiscal do supermercado ou importar pela chave de acesso ou arquivo CSV. O Compare lê os itens, quantidades e valores automaticamente nos portais da SEFAZ e monta seu histórico real de preços por loja.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>O app funciona sem internet?</summary>
+          <div class="faq-answer">
+            Sim! O Compare foi criado com arquitetura Local-First: suas listas de compras, catálogo de produtos, comparação de mercados e finanças funcionam normalmente offline no supermercado. A internet é usada apenas ao consultar uma nova nota fiscal na SEFAZ ou utilizar reconhecimento por IA.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Preciso criar conta ou meus dados de compras são vendidos?</summary>
+          <div class="faq-answer">
+            Não há cadastro nem login obrigatório. Suas notas fiscais, listas de compras e orçamento ficam salvos no armazenamento local do seu próprio celular e nunca são comercializados.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Quais versões do Android são compatíveis?</summary>
+          <div class="faq-answer">
+            O Compare Preços e Notas Fiscais é compatível com celulares Android 8.0 ou superior.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="shell section-pad">
+      <div class="final-cta">
+        <span class="eyebrow">Baixe na Google Play</span>
+        <h2>Leve o Compare na Próxima Ida ao Supermercado</h2>
+        <p>
+          Instale grátis no Android, escaneie sua primeira nota fiscal NFC-e e descubra onde seus produtos favoritos realmente estão mais baratos.
+        </p>
+        <a class="btn btn-primary play-cta"
+           href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+           target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a1.76 1.76 0 0 1-.41-1.132V2.946c0-.43.153-.832.41-1.132zm11.24 11.243l2.637 2.638-11.087 6.322 8.45-8.96zm3.884-1.856l3.012 1.718c.81.462.81 1.7 0 2.162l-3.012 1.718-2.852-2.852 2.852-2.746zM6.4 1.983l11.087 6.322-2.637 2.638-8.45-8.96z"/></svg>
+          <span>Instalar Agora no Google Play</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-inner">
+        <span>© 2026 iLikedit · Compare Preços e Notas Fiscais</span>
+        <div class="footer-links">
+          <a href="../">iLikedit — Página do Desenvolvedor</a>
+          <a href="../compare/privacypolicy.html">Política de Privacidade do Compare</a>
+        </div>
+      </div>
+      <p class="footer-note">
+        Os preços exibidos no aplicativo refletem o histórico das notas fiscais registradas e consultas realizadas pelo usuário no seu aparelho.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="mobile-sticky" aria-label="Atalho para instalar Compare">
+    <div class="mobile-sticky-brand">
+      <img src="assets/icon.webp" alt="Compare">
+      <div>
+        <strong>Compare</strong>
+        <span>Grátis para Android</span>
+      </div>
+    </div>
+    <a class="btn btn-primary btn-sm play-cta"
+       href="https://play.google.com/store/apps/details?id=com.ilikedit.compare&referrer=utm_source%3Dsite%26utm_medium%3Dlanding_page%26utm_campaign%3Dcompare_precos"
+       target="_blank" rel="noopener">
+      Instalar
+    </a>
+  </div>
+
+  <script>
+    const SCREENS = {
+      comparar: {
+        img: "assets/screen-comparar.webp",
+        alt: "Tela Ranking de Mercados no app Compare",
+        title: "Ranking de Mercados em Tempo Real",
+        desc: "Descubra imediatamente em qual supermercado a sua lista sai mais barata, comparando preços reais pagos nas suas últimas notas fiscais e filtrando pelo raio de distância.",
+        bullets: [
+          "Ranking automático mostrando quanto você economiza em reais",
+          "Filtro por raio de distância (GPS) e cobertura dos itens da lista",
+          "Detalhamento de preço item por item antes de escolher a loja"
+        ]
+      },
+      lista: {
+        img: "assets/screen-lista.webp",
+        alt: "Tela Lista de Compras no app Compare",
+        title: "Lista de Compras com Previsão de Gasto",
+        desc: "Planeje a ida ao mercado sabendo a estimativa total pelos preços da loja ativa e veja o valor no carrinho atualizar a cada item marcado.",
+        bullets: [
+          "Previsão total antes da compra e valor real no carrinho ao vivo",
+          "Adição rápida digitando ou lendo código de barras e balança",
+          "Referência do último preço pago por loja e data"
+        ]
+      },
+      pesquisar: {
+        img: "assets/screen-pesquisar.webp",
+        alt: "Tela Pesquisar e Código de Barras no app Compare",
+        title: "Pesquisa de Produtos, EAN e Tags",
+        desc: "Consulte qualquer item do seu histórico por nome, código de barras EAN ou tag agrupadora para comparar marcas, gramaturas e preços por quilo.",
+        bullets: [
+          "Leitor de código de barras EAN-13 / EAN-8 integrado na busca",
+          "Agrupamento inteligente de produtos semelhantes por Tags",
+          "Visualização rápida do mercado com o menor preço encontrado"
+        ]
+      },
+      financas: {
+        img: "assets/screen-financas.webp",
+        alt: "Tela Finanças e Orçamento Mensal no app Compare",
+        title: "Finanças & Orçamento Sem Planilhas",
+        desc: "Acompanhe receitas, despesas e o peso real das compras de supermercado e contas de consumo mês a mês com saldo líquido claro.",
+        bullets: [
+          "Visão mensal ou anual de receitas, despesas e notas fiscais",
+          "Escaneamento de contas de água, luz e boletos direto no orçamento",
+          "Gráfico comparativo de evolução mês a mês no próprio aparelho"
+        ]
+      },
+      temas: {
+        img: "assets/screen-temas.webp",
+        alt: "Seletor de 7 temas visuais no app Compare",
+        title: "7 Temas Visuais para Usar do Seu Jeito",
+        desc: "Personalize a interface do Compare entre modos claros e noturnos com alto contraste e leitura confortável em qualquer ambiente.",
+        bullets: [
+          "Temas Compare Claro e Compare Noturno já gratuitos",
+          "Paletas adicionais como Preço Azul, Economia Dourada e Mercado Verde",
+          "Design moderno em Material 3 com navegação simples por abas"
+        ]
+      }
+    };
+
+    (function initScreens() {
+      const tabs = document.querySelectorAll(".screen-tab[data-screen]");
+      const img = document.getElementById("screenPreviewImg");
+      const title = document.getElementById("screenTitle");
+      const desc = document.getElementById("screenDesc");
+      const bullets = document.getElementById("screenBullets");
+      let activeKey = "comparar";
+
+      function selectScreen(key) {
+        const data = SCREENS[key];
+        if (!data || key === activeKey) return;
+        activeKey = key;
+
+        tabs.forEach((btn) => {
+          const isSelected = btn.dataset.screen === key;
+          btn.classList.toggle("is-active", isSelected);
+          btn.setAttribute("aria-selected", isSelected ? "true" : "false");
+        });
+
+        img.classList.add("is-switching");
+        const onDone = () => img.classList.remove("is-switching");
+        img.onload = onDone;
+        img.onerror = onDone;
+        img.src = data.img;
+        img.alt = data.alt;
+        if (img.complete) onDone();
+
+        title.textContent = data.title;
+        desc.textContent = data.desc;
+        bullets.innerHTML = data.bullets.map((item) => `<li>${item}</li>`).join("");
+      }
+
+      tabs.forEach((btn) => {
+        btn.addEventListener("click", () => selectScreen(btn.dataset.screen));
+      });
+    })();
+
+    (function initSavingsSimulator() {
+      const slider = document.getElementById("spendSlider");
+      const spendLabel = document.getElementById("spendValueLabel");
+      const yearLabel = document.getElementById("annualSavingsLabel");
+      const monthLabel = document.getElementById("monthlySavingsLabel");
+
+      function formatBRL(val) {
+        return "R$ " + Math.round(val).toLocaleString("pt-BR");
+      }
+
+      function update() {
+        const spend = Number(slider.value);
+        const monthlySave = spend * 0.12;
+        const annualSave = monthlySave * 12;
+        spendLabel.textContent = formatBRL(spend);
+        yearLabel.textContent = `${formatBRL(annualSave)} / ano`;
+        monthLabel.textContent = `~ ${formatBRL(monthlySave)} economizados todo mês`;
+      }
+
+      slider.addEventListener("input", update);
+      update();
+    })();
+  </script>
+</body>
+</html>

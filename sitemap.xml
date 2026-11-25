@@ -9,6 +9,10 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://ilikedit.com.br/compare-precos/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://ilikedit.com.br/privacypolicy.html</loc>
     <priority>0.4</priority>
   </url>
