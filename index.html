@@ -826,10 +826,10 @@
         <div class="studio-glow" aria-hidden="true"></div>
         <div class="studio-orbit" aria-hidden="true"></div>
         <div class="dual-tiles">
-          <a class="hero-tile tile-gold" href="baralho-cigano/">
+          <a class="hero-tile tile-gold" href="baralho-cigano/" data-href-key="baralhoUrl">
             <img src="baralho-cigano/assets/ic_launcher_artwork.webp" alt="Ícone do Baralho Cigano">
             <div>
-              <strong>Baralho Cigano</strong>
+              <strong data-t="baralhoName">Baralho Cigano</strong>
               <span data-t="tileBaralhoSub">Oráculo IA &amp; 36 Cartas</span>
             </div>
           </a>
@@ -860,7 +860,7 @@
               <img class="app-icon" src="baralho-cigano/assets/ic_launcher_artwork.webp" alt="Ícone do Baralho Cigano">
               <div class="app-card-head">
                 <span class="app-status" data-t="baralhoBadge">★ 4,4 · 10.000+ downloads</span>
-                <h3>Baralho Cigano</h3>
+                <h3 data-t="baralhoName">Baralho Cigano</h3>
               </div>
             </div>
           </div>
@@ -876,7 +876,7 @@
           </div>
 
           <div class="app-actions">
-            <a class="btn btn-primary" href="baralho-cigano/" data-t="learnMore">
+            <a class="btn btn-primary" href="baralho-cigano/" data-href-key="baralhoUrl" data-t="learnMore">
               Conhecer o App →
             </a>
             <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.ilikedit.baralhocigano&referrer=utm_source%3Dsite%26utm_medium%3Dhome%26utm_campaign%3Dbaralho_cigano" target="_blank" rel="noopener">
@@ -1054,6 +1054,8 @@
         exploreApps: 'Conhecer Nossos Apps',
         contactButton: 'Falar com o Desenvolvedor',
         tileBaralhoSub: 'Oráculo IA & 36 Cartas',
+        baralhoName: 'Baralho Cigano',
+        baralhoUrl: 'baralho-cigano/',
         tileCompareSub: 'Preços & Notas NFC-e',
         appsEyebrow: 'Nossos Aplicativos',
         appsTitle: 'Feitos para Facilitar e Inspirar o Dia a Dia',
@@ -1113,6 +1115,8 @@
         exploreApps: 'Explore Our Apps',
         contactButton: 'Get in Touch',
         tileBaralhoSub: 'AI Oracle & 36 Cards',
+        baralhoName: 'Lenormand Cards',
+        baralhoUrl: 'baralho-cigano/en/',
         tileCompareSub: 'Prices & Receipts',
         appsEyebrow: 'Our Applications',
         appsTitle: 'Built to Simplify and Inspire Your Day',
@@ -1172,6 +1176,8 @@
         exploreApps: 'Conocer Nuestras Apps',
         contactButton: 'Contactar al Desarrollador',
         tileBaralhoSub: 'Oráculo IA y 36 Cartas',
+        baralhoName: 'Baraja Gitana',
+        baralhoUrl: 'baralho-cigano/es/',
         tileCompareSub: 'Precios y Recibos',
         appsEyebrow: 'Nuestras Aplicaciones',
         appsTitle: 'Hechas para Facilitar e Inspirar tu Día',
@@ -1231,6 +1237,8 @@
         exploreApps: 'Découvrir Nos Apps',
         contactButton: 'Contacter le Développeur',
         tileBaralhoSub: 'Oracle IA & 36 Cartes',
+        baralhoName: 'Cartes Lenormand',
+        baralhoUrl: 'baralho-cigano/fr/',
         tileCompareSub: 'Prix & Tickets',
         appsEyebrow: 'Nos Applications',
         appsTitle: 'Conçues pour Simplifier et Inspirer',
@@ -1290,6 +1298,8 @@
         exploreApps: 'Scopri le App',
         contactButton: 'Contatta lo Sviluppatore',
         tileBaralhoSub: 'Oracolo IA & 36 Carte',
+        baralhoName: 'Carte Lenormand',
+        baralhoUrl: 'baralho-cigano/it/',
         tileCompareSub: 'Prezzi & Scontrini',
         appsEyebrow: 'Le Nostre Applicazioni',
         appsTitle: 'Progettate per Semplificare e Ispirare',
@@ -1349,6 +1359,8 @@
         exploreApps: 'Unsere Apps entdecken',
         contactButton: 'Entwickler kontaktieren',
         tileBaralhoSub: 'KI-Orakel & 36 Karten',
+        baralhoName: 'Lenormandkarten',
+        baralhoUrl: 'baralho-cigano/de/',
         tileCompareSub: 'Preise & Kassenbons',
         appsEyebrow: 'Unsere Anwendungen',
         appsTitle: 'Gemacht für Klarheit im Alltag',
@@ -1416,6 +1428,11 @@
       document.querySelectorAll('[data-h]').forEach(el => {
         const key = el.dataset.h;
         if (c[key]) el.innerHTML = c[key];
+      });
+
+      document.querySelectorAll('[data-href-key]').forEach(el => {
+        const key = el.dataset.hrefKey;
+        if (c[key]) el.setAttribute('href', c[key]);
       });
 
       document.querySelectorAll('[data-lang]').forEach(b => {

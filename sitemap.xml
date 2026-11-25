@@ -9,6 +9,30 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/pt/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/en/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/es/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/fr/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/it/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ilikedit.com.br/baralho-cigano/de/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://ilikedit.com.br/compare-precos/</loc>
     <priority>1.0</priority>
   </url>
